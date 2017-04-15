@@ -12,6 +12,10 @@ body {
     width: 400px;
 }
 
+.button-container.empty {
+	background-color: #D6DEE1;	
+}
+
 .left-buttons-container {
 	display: inline-block;
 }
@@ -59,3 +63,23 @@ body {
 .bottom-button {
 	height: 30px;
 }	
+
+.title-container {
+	display: inline-block;
+	width: 100%;
+	padding: 0px 15px 0px 15px;
+}
+
+.title-header {
+	color: #026ead;
+	display: inline-block;
+}
+
+.title-image-container {
+	display: inline-block;
+}
+
+.title-image {
+	width: 50px;
+	height: 50px;
+}
