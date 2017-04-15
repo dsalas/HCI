@@ -1,3 +1,18 @@
+@font-face {
+	font-family: "bbvaweb-light";
+	src: url("fonts/bbvaweb-light.woff") format('woff');
+}
+
+@font-face {
+	font-family: "bbvaweb-medium";
+	src: url("fonts/bbvaweb-medium.woff") format('woff');
+}
+
+@font-face {
+	font-family: "bbvaweb-book";
+	src: url("fonts/bbvaweb-book.woff") format('woff');
+}
+
 body {
     background-color: #D6DEE1;
 }
@@ -9,7 +24,7 @@ body {
     margin-bottom: 50px;
     height: 50px;	
     display: block;
-    width: 400px;
+    width: 450px;
 }
 
 .button-container.empty {
@@ -48,10 +63,11 @@ body {
 	display: inline-block;
 	float: left;
 	height: 20px;
-	width: 300px;
+	width: 350px;
 	padding: 15px 15px 15px 15px;
 	text-decoration: none;
 	font-size: 20px;
+	font-family: "bbvaweb-medium";
 }
 
 .button-image {
