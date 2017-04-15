@@ -1,3 +1,19 @@
+body {
+    background-color: lightblue;
+}
+
+.button-container {
+	background-color: blue;
+	margin-top: 50px;
+    margin-bottom: 50px;
+    height: 50px;	
+}
+
+.button-text {
+	color: white;
+	display: inline-block;
+}
+
 .left-buttons-container {
 	display: inline-block;
 }
@@ -8,6 +24,6 @@
 }
 
 .button-image {
-	width: 20px;
-	height: 20px;
+	width: 50px;
+	height: 50px;
 }
