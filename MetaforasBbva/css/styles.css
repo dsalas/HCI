@@ -7,11 +7,8 @@ body {
 	margin-top: 50px;
     margin-bottom: 50px;
     height: 50px;	
-}
-
-.button-text {
-	color: white;
-	display: inline-block;
+    display: block;
+    width: 400px;
 }
 
 .left-buttons-container {
@@ -23,7 +20,36 @@ body {
 	float: right;
 }
 
+.right-buttons-container>.button-container>.button-image {
+	float: right;
+}
+	
+.right-buttons-container>.button-container>.button-text {
+	float: right;
+}
+
+.bottom-buttons-container>.button-container>.button-image {
+	width: 30px;
+	height: 30px;
+}
+	
+.bottom-buttons-container>.button-container>.button-text {
+
+}
+
+.button-text {
+	color: white;
+	display: inline-block;
+	float: left;
+}
+
 .button-image {
+	float: left;
 	width: 50px;
 	height: 50px;
 }
+
+.bottom-button {
+	height: 40px;
+	
+}	
