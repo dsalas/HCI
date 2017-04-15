@@ -86,13 +86,18 @@ body {
 	padding: 0px 15px 0px 15px;
 }
 
-.title-header {
+.title-label {
+	font-size: 25px;
+	font-family: "bbvaweb-medium";
 	color: #026ead;
 	display: inline-block;
+	float: left;
+	padding: 10px 15px 10px 15px;
 }
 
 .title-image-container {
 	display: inline-block;
+	float: left;
 }
 
 .title-image {
