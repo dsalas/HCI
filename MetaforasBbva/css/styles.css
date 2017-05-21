@@ -160,6 +160,31 @@ body {
     text-align: center;
 }
 
+/* Begin Materialize CSS */
 
+.btn {
+	right: 15px; /*  prevents offset */
+}
 
+.btn:hover {
+	background-color: #40b2da;
+}
 
+.btn:focus {
+	background-color: #026ead;
+}
+
+.row {
+	margin-bottom: 0px; /*  prevents offset */
+}
+
+.main-menu-option .button-text {
+	padding: 5px;
+	margin: 0px;
+	width: 140px;
+	height: 90px;
+	line-height: 25px;
+	text-transform: none;
+}
+
+/* End Materialize CSS */
