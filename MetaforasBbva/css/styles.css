@@ -5,6 +5,15 @@ body {
 .content {
 }
 
+.title-container {
+	font-size: 20px;
+	font-family: "bbvaweb-medium";
+	color: #026ead;
+	display: inline-block;
+	float: left;
+	padding: 10px 15px 10px 15px;
+}
+
 .button-container {
 	background-color: #026ead;
 	padding: 10px 10px 10px 10px;
@@ -113,7 +122,7 @@ body {
 }
 
 .title-label {
-	font-size: 25px;
+	font-size: 35px;
 	font-family: "bbvaweb-medium";
 	color: #026ead;
 	display: inline-block;
