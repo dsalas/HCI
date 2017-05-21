@@ -17,17 +17,6 @@ body {
 	src: url("fonts/bbvaweb-medium.woff") format('woff');
 }
 
-@font-face {
-	font-family: "bbvaweb-light";
-	src: url("fonts/bbvaweb-light.woff") format('woff');
-}
-
-@font-face {
-	font-family: "bbvaweb-medium";
-	src: url("fonts/bbvaweb-medium.woff") format('woff');
-}
-
-
 .content {
 }
 

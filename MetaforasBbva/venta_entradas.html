@@ -52,10 +52,10 @@
 var concerts = [{id: 0, name: "Bruno Mars", img: "./images/concerts/bruno.jpg"},{id: 1, name: "Pinkin Lark", img: "./images/concerts/intheend.png"}];
 $(function() {
     $.each(concerts, function( index, concert ) {
-  		var containerid = "#menu_option_" + concert.id
-  		
+  		var containerid = "#menu_option_" + concert.id;
+  		var eventRef = "./entrada_evento.html" + "?evento=" + concert.id;
   		var image = $('<img>').attr( "src", concert.img).attr("alt",concert.img).attr("class","concert-image");
-  		var link = $('<a>').attr("href","#").attr("class","button-text").append(concert.name);
+  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(concert.name);
   		$(containerid).append(image);
   		$(containerid).append(link);
   		$(containerid).removeClass("empty");
