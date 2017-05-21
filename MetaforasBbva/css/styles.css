@@ -1,20 +1,8 @@
-@font-face {
-	font-family: "bbvaweb-light";
-	src: url("fonts/bbvaweb-light.woff") format('woff');
-}
-
-@font-face {
-	font-family: "bbvaweb-medium";
-	src: url("fonts/bbvaweb-medium.woff") format('woff');
-}
-
-@font-face {
-	font-family: "bbvaweb-book";
-	src: url("fonts/bbvaweb-book.woff") format('woff');
-}
-
 body {
     background-color: #D6DEE1;
+}
+
+.content {
 }
 
 .button-container {
@@ -22,9 +10,39 @@ body {
 	padding: 10px 10px 10px 10px;
 	margin-top: 50px;
     margin-bottom: 50px;
-    height: 50px;	
-    display: block;
-    width: 450px;
+    height: 200px;	
+    width: 150px;
+    display: inline-block;
+}
+
+.top-buttons-container, .bottom-buttons-container {
+	display: table;
+	border-spacing: 15px;
+    border-collapse: separate;
+    margin: 0 auto;
+}
+
+.top-buttons-container {
+    margin-top: 100px;
+}
+
+.main-menu-option {
+	background-color: #026ead;
+	height: 175px;	
+    width: 150px;
+    display: table-cell;
+    border-radius: 7.5px;	
+}
+	
+.main-menu-option>.button-image{
+	display: inline-block;
+	margin-left: 50px;
+}
+
+.main-menu-option>.button-text{
+	display: inline-block;
+	width: 120px;
+	text-align: center;
 }
 
 .button-container.empty {
@@ -32,12 +50,14 @@ body {
 }
 
 .left-buttons-container {
-	display: inline-block;
+	display: table;
+	table-layout: fixed;
+	width:90%;
+    height:100px;
 }
 
 .right-buttons-container {
 	display: inline-block;
-	float: right;
 }
 
 .right-buttons-container>.button-container>.button-image {
@@ -55,18 +75,15 @@ body {
 	
 .bottom-buttons-container>.button-container>.button-text {
 	padding: 5px 5px 5px 5px;
-	width: 380px;
 }
 
 .button-text {
 	color: white;
-	display: inline-block;
-	float: left;
 	height: 20px;
-	width: 350px;
 	padding: 15px 15px 15px 15px;
 	text-decoration: none;
 	font-size: 20px;
+	display: inline-block;
 	font-family: "bbvaweb-medium";
 }
 
@@ -104,3 +121,34 @@ body {
 	width: 50px;
 	height: 50px;
 }
+
+	font-family: "bbvaweb-book";
+	src: url("fonts/bbvaweb-book.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: "bbvaweb-light";
+	src: url("fonts/bbvaweb-light.woff") format('woff');
+}
+
+@font-face {
+	font-family: "bbvaweb-medium";
+	src: url("fonts/bbvaweb-medium.woff") format('woff');
+}
+
+@font-face {@font-face {
+	font-family: "bbvaweb-light";
+	src: url("fonts/bbvaweb-light.woff") format('woff');
+}
+
+@font-face {
+	font-family: "bbvaweb-medium";
+	src: url("fonts/bbvaweb-medium.woff") format('woff');
+}
+
+@font-face {
+	font-family: "bbvaweb-book";
+	src: url("fonts/bbvaweb-book.woff") format('woff');
+}
+
