@@ -20,6 +20,7 @@ body {
 	border-spacing: 15px;
     border-collapse: separate;
     margin: 0 auto;
+    width: 750px;
 }
 
 .top-buttons-container {
@@ -29,19 +30,24 @@ body {
 .main-menu-option {
 	background-color: #026ead;
 	height: 175px;	
-    width: 150px;
+    width: 130px;
     display: table-cell;
     border-radius: 7.5px;	
+    padding: 10px;
+    text-align: center;
 }
 	
-.main-menu-option>.button-image{
+.main-menu-option.empty {
+	background-color: #D6DEE1;
+}
+	
+.main-menu-option>.button-image, .main-menu-option>.concert-image {
 	display: inline-block;
-	margin-left: 50px;
+	margin-top: 15px;
 }
 
 .main-menu-option>.button-text{
-	display: inline-block;
-	width: 120px;
+	display: block;
 	text-align: center;
 }
 
@@ -88,11 +94,14 @@ body {
 }
 
 .button-image {
-	float: left;
 	width: 50px;
 	height: 50px;
 }
 
+.concert-image {
+	width: 100px;
+	height: 100px;
+}
 .bottom-button {
 	height: 30px;
 }	

@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <div id="content">
+  	<div class = "top-buttons-container">
+  		<div id="menu_option_0" class= "main-menu-option">
+
+  		</div>
+  		<div id="menu_option_1" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_2" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_3" class= "main-menu-option empty">
+  		</div>
+  	</div>
+  	<div class = "bottom-buttons-container">
+  		<div id="menu_option_4" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_5" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_6" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_7" class= "main-menu-option empty">
+  		</div>
+  	</div>
+  </div>
+</body>
+<script> 
+var concerts = [{id: 0, name: "Bruno Mars", img: "./images/concerts/bruno.jpg"},{id: 1, name: "Pinkin Lark", img: "./images/concerts/intheend.png"}];
+$(function() {
+    $.each(concerts, function( index, concert ) {
+  		var containerid = "#menu_option_" + concert.id
+  		
+  		var image = $('<img>').attr( "src", concert.img).attr("alt",concert.img).attr("class","concert-image");
+  		var link = $('<a>').attr("href","#").attr("class","button-text").append(concert.name);
+  		$(containerid).append(image);
+  		$(containerid).append(link);
+  		$(containerid).removeClass("empty");
+	});	
+});
+</script>
+</html>
