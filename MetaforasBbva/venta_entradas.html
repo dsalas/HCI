@@ -39,6 +39,13 @@
   		<div id="menu_option_7" class= "main-menu-option empty">
   		</div>
   	</div>
+  	<div class = "bottom-buttons-container">
+  	  	<div class= "button-container bottom-button">
+  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  		</div>
+  		<div class = "search-tool-container">
+  		</div>
+  	</div>
   </div>
 </body>
 <script> 
@@ -53,6 +60,9 @@ $(function() {
   		$(containerid).append(link);
   		$(containerid).removeClass("empty");
 	});	
+	createSearchTool($(".search-tool-container"));
 });
+
+
 </script>
 </html>
