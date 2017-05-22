@@ -7,42 +7,59 @@
   <title>Metaforas - BBVA </title>
   <meta name="description" content="Metaforas BBVA">
   <meta name="author" content="GrupoHCI">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
-  <div id="content">
+  <div id="content container">
     <div class="title-container">
     	<div class="title-image-container">
     	<img src="images/operaciones_frecuentes.png" alt="Operaciones frecuentes" class="title-image">
     	</div>
   		<label class="title-label">Operaciones Frecuentes</label>
   	</div>
-  	<div class = "left-buttons-container">
-  		<div class= "button-container">
-  			<img src="images/transferencia_a_terceros.png" alt="Transferencia a Terceros" class="button-image">
-  			<a href="#" class="button-text">Transferencias a Terceros</a>
-  		</div>
-  		<div class= "button-container">
-  			<img src="images/pago_servicios.png" alt="Pago Servicios" class="button-image">
-  			<a href="#" class="button-text">Pago de servicios y Recaudos</a>
-  		</div>
-  		<div class= "button-container">
-  			<img src="images/deposito_rapido.png" alt="Deposito Rapido" class="button-image">
-  			<a href="./deposito_rapido_of.html" class="button-text">Depósito Rápido</a>
-  		</div>
-  		<div class= "button-container">
-  			<img src="images/retiro_rapido.png" alt="Retiro Rapido" class="button-image">
-  			<a href="./retiro_rapido_of.html" class="button-text">Retiro Rápido</a>
-  		</div>
-  	</div>
-  	<div class = "bottom-buttons-container">
+
+    <div class = "top-buttons-container row">
+      <div class= "col s3">
+        <a href="./transferencias_terceros_of.html" class="main-menu-option waves-effect waves-light btn">
+          <img src="images/transferencia_a_terceros.png" alt="Transferencia a Terceros" class="button-image">
+          <p href="./transferencias_terceros_of.html" class="button-text">Transferencias a Terceros</p>
+        </a>
+      </div>
+      <div class= "col s3">
+        <a href="./pago_servicios_recaudos.html" class="main-menu-option waves-effect waves-light btn">
+          <img src="images/pago_servicios.png" alt="Pago Servicios" class="button-image">
+          <p href="./pago_servicios_recaudos.html" class="button-text">Pago de servicios y Recaudos</p>
+        </a>
+      </div>
+      <div class= "col s3">
+        <a href="./deposito_rapido_of.html" class="main-menu-option waves-effect waves-light btn">
+          <img src="images/deposito_rapido.png" alt="Deposito Rapido" class="button-image">
+          <p href="./deposito_rapido_of.html" class="button-text">Depósito Rápido</p>
+        </a>
+      </div>
+      <div class= "col s3">
+        <a href="./retiro_rapido_of.html" class="main-menu-option waves-effect waves-light btn">
+          <img src="images/retiro_rapido.png" alt="Retiro Rapido" class="button-image">
+          <p href="./retiro_rapido_of.html" class="button-text">Retiro Rápido</p>
+        </a>
+      </div>
+    </div>
+
+  	<div class = "bottom-buttons-container row">
   	  	<div class= "button-container bottom-button">
-  			<!--<img src="images/testIcon.png" alt="Text Icon" class="button-image">-->
-  			<a href="javascript:history.back()" class="button-text">Regresar</a>
-  		</div>
+        <a href="javascript:history.back()" class="button-text">Volver</a>
+      </div>
+      </div>
   	</div>
   </div>
 </body>
