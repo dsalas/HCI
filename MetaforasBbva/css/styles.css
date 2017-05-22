@@ -298,6 +298,14 @@ body {
 
 /* Select */
 
+#pagos .bottom-buttons-container .button-text {
+	height: auto;
+}
+
+#pagos .bottom-buttons-container .main-menu-option {
+	height: auto;
+}
+
 .select-dropdown{
   display: inherit !important;
   overflow-y: scroll;
@@ -321,4 +329,3 @@ body {
 	font-family: "bbvaweb-medium";
   display: table-cell;
 }
-

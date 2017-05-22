@@ -84,14 +84,14 @@ var concert0 = {name: "Bruno Mars en concierto.",
 var concert1 = {name: "Pinkin Lark en concierto.",
 				date: "11/06/2017",
 				place: "Estadio Nacional", 
-				adress: "Dirección: Calle Jose Diaz S/n - Lima",
+				adress: "Calle Jose Diaz S/n - Lima",
 				map: "images/concerts/numb_map.jpg",
 				starts: "9:00 p.m.",
 				zones: [{name: "Campo A", cost: 480.00},{name: "Campo B", cost: 236.00},{name: "Oriente", cost: 132.00}]};
 $(function() {
 	var total = 0.00;
 	var currentEvent = getUrlParameter("evento");
-	$("#buy_link").attr("href","./comprar_entrada	.html?evento="+currentEvent);
+	$("#buy_link").attr("href","./comprar_entrada.html?evento="+currentEvent);
 	var concert = concert0;
 	if (currentEvent != 0) {
 		concert = concert1;

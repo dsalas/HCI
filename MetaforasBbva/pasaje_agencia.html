@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/split_screen.css">
+</head>
+
+<body>
+  <div id="content">
+	<div class="left-container">
+		<div class = "title-container">
+  			<label id="agency_name" class = "title-label">Nombre evento</label>
+  		</div>
+  		<div class = "info-container">
+  			<label class = "event-info-label">R.U.C.:</label><label id="agency_ruc" class = "event-info-text">1/01/2017</label>
+  			<label class = "event-info-label">Terminal:</label><label id="agency_adress" class = "event-info-text">Estadio Nacional</label> 
+  			<label class = "event-info-label">Contacto:</label><label id="agency_contact" class = "event-info-text">Calle Jose Diaz S/n - Lima</label>
+  		</div>
+  		<!--<div class = "button-container legal-info">
+  			<a href="#" class="button-text">Ver información legal</a>
+  		</div> -->
+  		<div class = "map-container">
+  			
+  			<img id="agency_pub" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
+  		</div>
+  	</div>
+	<div class="right-container">
+		<div class = "title-container">
+  			<label class = "title-label small">Seleccione ciudad de origen:</label>
+  		</div>
+  		<div class = "zone-select-container"> 
+  			<div class="select-style2"> 
+				<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+					<option value="0">Lima - Lima</option>
+					<option value="1">La Libertad - Trujillo</option>
+					<option value="2">Ica - Ica</option>
+				</select>
+  			</div>
+  		</div>
+  				<div class = "title-container">
+  			<label class = "title-label small">Seleccione ciudad destino:</label>
+  		</div>
+  		<div class = "zone-select-container"> 
+  			<div class="select-style2"> 
+				<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+					<option value="0">Lima - Lima</option>
+					<option value="1">La Libertad - Trujillo</option>
+					<option value="2">Ica - Ica</option>
+				</select>
+  			</div>
+  		</div>
+  		<div class = "date-container"> 
+  			<div>Solo ida</div> <div>Ida y vuelta</div>
+  			<!--<div class="zone-container"> 
+  			<div class="zone-name">Zone name</div>
+  			<div class="small-action-button left">+</div><input class="zone-count" value ="1" readonly></input><div class="small-action-button right">-</div>
+  			<div class="small-action-button">x</div>
+  			</div>	-->	
+  		</div>
+  		<div class = "total-container">
+  			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
+  		</div>
+	</div> 	
+	<div class = "bottom-buttons-container">
+  	  	<div class= "button-container bottom-button absolute-left">
+  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  		</div>
+  		<div class= "button-container bottom-button absolute-right">
+  			<a id="buy_link" href="./comprar_pasaje.html" class="button-text">Comprar</a>
+  		</div>
+  		</div>
+  	</div>	
+  </div>
+</body>
+<script> 
+var agency0 = {name: "TRANSPORTES CRUZ DEL SUR S.A.C.", 
+				ruc: "20100227461",
+				contact: "3115030",
+				adress: "Terminal: Calle Jose Diaz S/n - Lima",
+				pub: "images/travel/cruz_pub.jpg"};
+var agency1 = {name: "Movil Tours",
+				ruc: "11/06/2017",
+				contact: "Estadio Nacional", 
+				adress: "Terminal: Avenida Raul Ferrero 120",
+				pub: "images/travel/movil_pub.png"};
+				
+$(function() {
+	var total = 0.00;
+	var currentEvent = getUrlParameter("agencia");
+	$("#buy_link").attr("href","./comprar_pasaje.html?agencia="+currentEvent);
+	var agency = agency0;
+	if (currentEvent != 0) {
+		agency = agency1;
+	}
+	$("#agency_name").text(agency.name);
+	$("#agency_ruc").text(agency.ruc);
+	$("#agency_adress").text(agency.adress);
+	$("#agency_contact").text(agency.contact);
+	$("#agency_pub").attr("src",agency.pub);
+    
+});
+
+function addHover(elem) {
+	$(elem).hover(function() {
+        $(this).css('cursor','pointer');
+    });
+}
+
+
+</script>
+</html>

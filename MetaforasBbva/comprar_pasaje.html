@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/summary_screen.css">
+
+</head>
+
+<body>
+  <div id="content">
+    <div class = "title-container">
+  		<label class = "title-label">Detalle de la compra:</label>
+  	</div>
+  	<div class = "sale-detail-container">
+  		<div id="place" class = "info-left info-line">Lugar</div>
+  		<div id="date" class = "info-left info-line">Fecha</div>
+		<div id="time" class = "info-left info-line"></div>
+		<div id="info1" class = "info-left info-line"></div>
+		<div id="total" class = "info-left info-line">Total a pagar:</div>
+	</div>
+  	<div class = "account-selector-container">
+  			<label class = "select-label">Seleccione una cuenta:</label>
+  			<div class="select-style2"> 
+				<select  size="1" autocomplete="off" id="selectbox">
+					<option value="0">5343-4673-1292-1283 - 2000 S/.</option>
+					<option value="1">5343-4673-1292-9930 - 500 S/.</option>
+				</select>
+  			</div>
+  	</div>
+  	<div class = "bottom-buttons-container">
+  	  	<div class= "button-container bottom-button left-button">
+  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  		</div>
+  		 <div class= "button-container bottom-button right-button">
+  			<a id="buy_link" href="./resumen_compra_pasaje.html" class="button-text ">Confirmar</a>
+  		</div>
+  		</div>
+  	</div>
+  </div>
+</body>
+<script> 
+$(function() {
+	var currentEvent = getUrlParameter("agencia");
+	$("#buy_link").attr("href","./resumen_compra_pasaje.html?agencia="+currentEvent);
+	if (currentEvent == 0) {
+		$("#place").html("Pasaje: Origen: Lima - Lima  Destino: La Libertad - Trujillo");
+		$("#date").html("Fecha de partida 29/05/2017  - Fecha de retorno: 5/06/2017");
+		$("#time").html("Hora de partida: 11:00 a.m.");
+		$("#info1").html("Asientos: 40, 41");
+		$("#total").html("Total a pagar: S/. 150.00");
+	} else {
+		$("#place").html("Pasaje: Origen: Lima - Lima  Destino: La Libertad - Trujillo");
+		$("#date").html("Fecha de partida 29/05/2017  - Fecha de retorno: 5/06/2017");
+		$("#time").html("Hora de partida: 11:00 a.m.");
+		$("#info1").html("Asientos: 40, 41");
+		$("#total").html("Total a pagar: S/. 150.00");
+	}
+	
+});
+</script>
+</html>
