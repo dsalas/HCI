@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <div id="content">
+    <div class = "title-container">
+  		<label class = "title-label">Servicios y Recaudos: seleccione una categoría.</label>
+  	</div>
+  	<div class = "top-buttons-container">
+  		<div id="menu_option_0" class= "main-menu-option">
+
+  		</div>
+  		<div id="menu_option_1" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_2" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_3" class= "main-menu-option empty">
+  		</div>
+  	</div>
+  	<div class = "bottom-buttons-container">
+  		<div id="menu_option_4" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_5" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_6" class= "main-menu-option empty">
+  		</div>
+  		<div id="menu_option_7" class= "main-menu-option empty">
+  		</div>
+  	</div>
+  	<div class = "bottom-buttons-container">
+  	  	<div class= "button-container bottom-button">
+  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  		</div>
+  		<div class = "search-tool-container">
+  		</div>
+  	</div>
+  </div>
+</body>
+
+<script>
+var concerts = [
+  {id: 0, name: "Servicios de Luz", img: "./images/placeholder.png", tipo: "servicio"},
+  {id: 1, name: "Servicios de Agua", img: "./images/placeholder.png", tipo: "servicio"},
+  {id: 2, name: "Servicios de Telefonía", img: "./images/placeholder.png", tipo: "servicio"},
+  {id: 3, name: "Recaudos Colegios", img: "./images/placeholder.png", tipo: "recaudo"},
+  {id: 4, name: "Recaudos Cosmeticos", img: "./images/placeholder.png", tipo: "recaudo"},
+  {id: 5, name: "Recaudos Municipalidades", img: "./images/placeholder.png", tipo: "recaudo"}
+];
+$(function() {
+    $.each(concerts, function( index, categoria ) {
+  		var containerid = "#menu_option_" + categoria.id;
+  		var eventRef = "./pago_servicios_recaudos.html" + "?categoria=" + categoria.id+"&tipo="+categoria.tipo;
+  		var image = $('<img>').attr( "src", categoria.img).attr("alt",categoria.img).attr("class","concert-image");
+  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(categoria.name);
+  		$(containerid).append(image);
+  		$(containerid).append(link);
+  		$(containerid).removeClass("empty");
+	});
+	//createSearchTool($(".search-tool-container"));
+});
+
+
+</script>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./script/commons.js"></script>
+    <title>Metaforas - BBVA </title>
+    <meta name="description" content="Metaforas BBVA">
+    <meta name="author" content="GrupoHCI">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div id="content">
+        <div class = "title-container">
+            <label class = "title-label">Transferencias a terceros</label>
+        </div>
+
+        <div id="column_container" class="top-buttons-container row">
+            <div class="col s6">
+                
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="width: 100%; text-align: center;">
+                                    <a href="#"><img src="images/icon_triangle_up.png" alt="Text Icon" class="button-image"></a>
+                                </div>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class= "button-container list-button btn">
+                                    <a href="#" class="button-text">Descripci&oacute;n 1</a>
+                                </div>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class= "button-container list-button btn">
+                                    <a href="#" class="button-text">Descripci&oacute;n 2</a>
+                                </div>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class= "button-container list-button btn">
+                                    <a href="#" class="button-text">Descripci&oacute;n 3</a>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="images/icon_triangle_right.png" alt="Text Icon" class="button-image">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="width: 100%; text-align: center;">
+                                    <a href="#"><img src="images/icon_triangle_down.png" alt="Text Icon" class="button-image"></a>
+                                </div>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s6">
+                <table style="width: 100%;" class="details-table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label class="button-text">Destinatario</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="desc-label">Juan Arturo Lopez Otiniano</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="button-text">Cuenta destino</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="desc-label">XXXX XXXX XXXX 1234</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="button-text">Cuenta origen</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="desc-label">XXXX XXXX XXXX 4321</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="button-text">Monto S/.</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="desc-label" type="number"  name="" value="20.00">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class = "bottom-buttons-container">
+                <div class= "button-container bottom-button btn">
+                    <a href="javascript:history.back()" class="button-text">Volver</a>
+                </div>
+                <div style="float: right;">
+                    <div class= "button-container bottom-button btn" style="width: 290px;">
+                        <a href="#" class="button-text">Guardar y confirmar</a>
+                    </div>
+                    <div class= "button-container bottom-button btn">
+                        <a href="#" class="button-text">Confirmar</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+<script> 
+var concerts = [{id: 0, name: "Bruno Mars", img: "./images/concerts/bruno.jpg"},{id: 1, name: "Pinkin Lark", img: "./images/concerts/intheend.png"}];
+$(function() {
+    $.each(concerts, function( index, concert ) {
+        var containerid = "#menu_option_" + concert.id
+        
+        var image = $('<img>').attr( "src", concert.img).attr("alt",concert.img).attr("class","concert-image");
+        var link = $('<a>').attr("href","#").attr("class","button-text").append(concert.name);
+        $(containerid).append(image);
+        $(containerid).append(link);
+        $(containerid).removeClass("empty");
+    }); 
+});
+
+
+</script>
+</html>
