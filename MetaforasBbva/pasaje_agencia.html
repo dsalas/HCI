@@ -29,12 +29,12 @@
   		</div> -->
   		<div class = "map-container">
   			
-  			<img id="concert_map" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
+  			<img id="agency_pub" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
   		</div>
   	</div>
 	<div class="right-container">
 		<div class = "title-container">
-  			<label class = "title-label">Seleccione ciudad de origen:</label>
+  			<label class = "title-label small">Seleccione ciudad de origen:</label>
   		</div>
   		<div class = "zone-select-container"> 
   			<div class="select-style2"> 
@@ -44,10 +44,9 @@
 					<option value="2">Ica - Ica</option>
 				</select>
   			</div>
-  			<div id="add_zone" class="small-action-button">+</div>
   		</div>
   				<div class = "title-container">
-  			<label class = "title-label">Seleccione ciudad destino:</label>
+  			<label class = "title-label small">Seleccione ciudad destino:</label>
   		</div>
   		<div class = "zone-select-container"> 
   			<div class="select-style2"> 
@@ -57,9 +56,9 @@
 					<option value="2">Ica - Ica</option>
 				</select>
   			</div>
-  			<div id="add_zone" class="small-action-button">+</div>
   		</div>
-  		<div class = "zones-container"> 
+  		<div class = "date-container"> 
+  			<div>Solo ida</div> <div>Ida y vuelta</div>
   			<!--<div class="zone-container"> 
   			<div class="zone-name">Zone name</div>
   			<div class="small-action-button left">+</div><input class="zone-count" value ="1" readonly></input><div class="small-action-button right">-</div>
@@ -86,19 +85,13 @@ var agency0 = {name: "TRANSPORTES CRUZ DEL SUR S.A.C.",
 				ruc: "20100227461",
 				contact: "3115030",
 				adress: "Terminal: Calle Jose Diaz S/n - Lima",
-				map: "images/travel/cruz_pub.jpg",
-				starts: "9:00 p.m.",
-				zones: [{name: "Cancha 1", cost: 790.00},{name: "Cancha 2", cost: 540.00},{name: "Cancha 3", cost: 400.00},
-						{name: "Oriente 1", cost: 650.00},{name: "Oriente 2", cost: 530.00},{name: "Oriente 3", cost: 450.00},
-						{name: "Occidente 1", cost: 747.00},{name: "Occidente 2", cost: 609.00},{name: "Occidente 3", cost: 450.00},
-						{name: "Tribuna Norte", cost: 170.00}]};
+				pub: "images/travel/cruz_pub.jpg"};
 var agency1 = {name: "Movil Tours",
 				ruc: "11/06/2017",
 				contact: "Estadio Nacional", 
 				adress: "Terminal: Avenida Raul Ferrero 120",
-				map: "images/concerts/numb_map.jpg",
-				starts: "9:00 p.m.",
-				zones: [{name: "Campo A", cost: 480.00},{name: "Campo B", cost: 236.00},{name: "Oriente", cost: 132.00}]};
+				pub: "images/travel/movil_pub.png"};
+				
 $(function() {
 	var total = 0.00;
 	var currentEvent = getUrlParameter("agencia");
@@ -108,11 +101,10 @@ $(function() {
 		agency = agency1;
 	}
 	$("#agency_name").text(agency.name);
-
 	$("#agency_ruc").text(agency.ruc);
 	$("#agency_adress").text(agency.adress);
 	$("#agency_contact").text(agency.contact);
-	$("#concert_map").attr("src",agency.map);
+	$("#agency_pub").attr("src",agency.pub);
     
 });
 
@@ -122,17 +114,6 @@ function addHover(elem) {
     });
 }
 
-function sortSelect() {
-	var my_options = $("#concert_zones option");
-	var selected = $("#concert_zones").val();
-	my_options.sort(function(a,b) {
-    	if (a.value > b.value) return 1;
-    	if (a.value < b.value) return -1;
-    	return 0
-	});
-	$("#concert_zones").empty().append( my_options );
-	$("#concert_zones").val(selected);	
-}
 
 </script>
 </html>

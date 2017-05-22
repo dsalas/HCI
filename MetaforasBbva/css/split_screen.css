@@ -4,7 +4,11 @@
 }
 
 #concert_map {
-	width: 100%;
+	width: 90%;
+}
+
+#agency_pub {
+	width: 90%;
 }
 
 .left-container {
@@ -202,4 +206,12 @@
 
 .button-container.bottom-button.absolute-left {
 	float: left;
+}
+
+.title-label.small {
+	font-size: 30	px;
+}
+
+.date-container{
+	margin-left: 20%;
 }
