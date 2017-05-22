@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <title>Metaforas - BBVA - Depósitos</title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/summary_screen.css">
+
+  <script>
+    $(document).ready(function() {
+        $('select').material_select();
+      });
+  </script>
+
+</head>
+
+<body>
+  <div id="depositos" class="container">
+
+    <div class = "title-container row">
+      <div class="col s12">
+        <label class = "title-label">Operación realizada con éxito:</label>
+      </div>
+    </div>
+    
+    <div class="confirmacion row">
+      <div class = "sale-detail-container title s10 offset-s1">
+        <p class="alignleft"><strong>Operación:</strong><span class="alignright">ID-3425-DEPCHEQ-1241324</span></p>
+        <p class="alignleft"><strong>Empresa:</strong><span class="alignright">Empresa de Transportes S.A.</span></p>
+        <p class="alignleft"><strong>Emitido por:</strong><span class="alignright">Juan Ferraro T.</span></p>
+        <p class="alignleft"><strong>Fecha de emisión:</strong><span class="alignright">07/04/2017</span></p>
+        <p class="alignleft"><strong>Fecha de depósito:</strong><span class="alignright">14/05/2017</span></p>
+        <p class="alignleft"><strong>Monto:</strong><span class="alignright">S/. 5,000</span></p>
+      </div>  
+    </div>
+
+    <div class="bottom-buttons-container row">
+      <div class="col s3">
+        <a href="./index.html" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Salir</p>
+        </a>
+      </div>
+
+      <div class="col s3 offset-s5">
+        <a href="#" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Imprimir Comprobante</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
