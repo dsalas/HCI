@@ -48,19 +48,27 @@
   	</div>
   </div>
 </body>
+
 <script>
-var concerts = [{id: 0, name: "Bruno Mars", img: "./images/concerts/bruno.jpg"},{id: 1, name: "Pinkin Lark", img: "./images/concerts/intheend.png"}];
+var concerts = [
+  {id: 0, name: "Servicios de Luz", img: "./images/placeholder.png", tipo: "servicio"},
+  {id: 1, name: "Servicios de Agua", img: "./images/placeholder.png", tipo: "servicio"},
+  {id: 2, name: "Servicios de Telefonía", img: "./images/placeholder.png", tipo: "servicio"},
+  {id: 3, name: "Recaudos Colegios", img: "./images/placeholder.png", tipo: "recaudo"},
+  {id: 4, name: "Recaudos Cosmeticos", img: "./images/placeholder.png", tipo: "recaudo"},
+  {id: 5, name: "Recaudos Municipalidades", img: "./images/placeholder.png", tipo: "recaudo"}
+];
 $(function() {
-    $.each(concerts, function( index, concert ) {
-  		var containerid = "#menu_option_" + concert.id;
-  		var eventRef = "./entrada_evento.html" + "?evento=" + concert.id;
-  		var image = $('<img>').attr( "src", concert.img).attr("alt",concert.img).attr("class","concert-image");
-  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(concert.name);
+    $.each(concerts, function( index, categoria ) {
+  		var containerid = "#menu_option_" + categoria.id;
+  		var eventRef = "./pago_servicios_recaudos.html" + "?categoria=" + categoria.id+"&tipo="+categoria.tipo;
+  		var image = $('<img>').attr( "src", categoria.img).attr("alt",categoria.img).attr("class","concert-image");
+  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(categoria.name);
   		$(containerid).append(image);
   		$(containerid).append(link);
   		$(containerid).removeClass("empty");
 	});
-	createSearchTool($(".search-tool-container"));
+	//createSearchTool($(".search-tool-container"));
 });
 
 

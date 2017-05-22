@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/summary_screen.css">
+
+</head>
+
+<body>
+  <div id="content">
+    <div class = "title-container">
+  		<label class = "title-label">Operación realizada con éxito:</label>
+  	</div>
+  	<div class = "sale-detail-container">
+  		<div class = "info-left info-line">Operación: ID-3456-COMPENT-1993892</div>
+		<div id="event" class = "info-left">Evento: Bruno Mars en concierto</div><div class="info-right">Fecha: 30/11/2017</div>
+		<div class = "info-left">Lugar: Estadio Nacional - Calle Jose Diaz S/n - Lima</div><div class = "info-right">Hora de inicio: 9:00 p.m.</div>
+		<div class = "info-left info-line">Usted desea adquirir:</div>
+		<div id="info1" class = "info-left info-line">Una (1) entrada para la zona Cancha 1 - S/. 790.00</div>
+		<div id="info2" class = "info-left info-line">Dos (2) entradas para la zona Cancha 2 - S/. 540.00</div>
+		<div id="total" class = "info-left info-line">Total a pagar: S/.1870.00</div>
+	</div>
+  	<div class = "bottom-buttons-container">
+  	  	<div class= "button-container bottom-button left-button">
+  			<a href="#" class="button-text">Ver Saldo</a>
+  		</div>
+  		 <div class= "button-container bottom-button right-button large">
+  			<a href="#" class="button-text">Imprimir Comprobante</a>
+  		</div>
+  		</div>
+  	</div>
+  </div>
+</body>
+<script> 
+$(function() {
+	var currentEvent = getUrlParameter("evento");
+	if (currentEvent == 0) {
+		$("#event").html("Evento: Bruno Mars en concierto");
+		$("#date").html("30/11/2017");
+		$("#info1").html("Una (1) entrada para la zona Cancha 1 - S/. 790.00");
+		$("#info2").html("Dos (2) entradas para la zona Cancha 2 - S/. 540.00");
+		$("#total").html("Total a pagar: S/. 1870.00");
+	} else {
+		$("#event").html("Evento: Pinkin Lark en concierto");
+		$("#date").html("11/06/2017");
+		$("#info1").html("Una (1) entrada para la zona Campo A - S/. 480.00");
+		$("#info2").html("Tres (3) entradas para la zona Campo B - S/. 236.00");
+		$("#total").html("Total a pagar: S/. 1188.00");
+	}
+	
+});
+</script>
+</html>

@@ -45,18 +45,18 @@ body {
 
 .main-menu-option {
 	background-color: #026ead;
-	height: 175px;	
+	height: 175px;
     width: 130px;
     display: table-cell;
-    border-radius: 7.5px;	
+    border-radius: 7.5px;
     padding: 10px;
     text-align: center;
 }
-	
+
 .main-menu-option.empty {
 	background-color: #D6DEE1;
 }
-	
+
 .main-menu-option>.button-image, .main-menu-option>.concert-image {
 	display: inline-block;
 	margin-top: 15px;
@@ -68,14 +68,14 @@ body {
 }
 
 .button-container.empty {
-	background-color: #D6DEE1;	
+	background-color: #D6DEE1;
 }
 
 .bottom-buttons-container>.button-container>.button-image {
 	width: 30px;
 	height: 30px;
 }
-	
+
 .bottom-buttons-container>.button-container>.button-text {
 	padding: 5px 5px 5px 5px;
 }
@@ -106,10 +106,26 @@ body {
 	width: 150px;
 	border-radius: 15px;
 	display: inline-block;
-}	
+}
+
+.button-container.list-button {
+	height: 30px;
+	width: 100%;
+	border-radius: 15px;
+	display: inline-block;
+}
 
 .title-label {
 	font-size: 35px;
+	font-family: "bbvaweb-medium";
+	color: #026ead;
+	display: inline-block;
+	float: left;
+	padding: 10px 15px 10px 15px;
+}
+
+.desc-label {
+	font-size: 15px;
 	font-family: "bbvaweb-medium";
 	color: #026ead;
 	display: inline-block;
@@ -125,7 +141,7 @@ body {
 .title-image {
 	width: 50px;
 	height: 50px;
-}	
+}
 
 .search-tool-container {
     height: 30px;
@@ -174,6 +190,16 @@ body {
 	height: 90px;
 	line-height: 25px;
 	text-transform: none;
+}
+
+#transferencias .bottom-buttons-container .button-text {
+	height: auto;
+}
+
+.details-table td {
+	padding: 0px 5px;
+	text-align: left;
+    vertical-align: middle;
 }
 
 /* End Materialize CSS */
@@ -232,3 +258,28 @@ body {
 #depositos .card-content p {
 	font-size: 30px;
 }
+
+.select-dropdown{
+  display: inherit !important;
+  overflow-y: scroll;
+}
+
+.option{
+  color: #026ead;
+  padding: 15px 15px 15px 15px;
+  margin: 10px 10px;
+  text-decoration: none;
+	font-size: 20px;
+	font-family: "bbvaweb-medium";
+}
+
+.input-column{
+  color: #026ead;
+  font-size: 15px !important;
+  padding: 15px !important;
+  margin-bottom: 0px !important;
+  text-decoration: none;
+	font-family: "bbvaweb-medium";
+  display: table-cell;
+}
+

@@ -1,0 +1,182 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/split_screen.css">
+</head>
+
+<body>
+  <div id="content">
+	<div class="left-container">
+		<div class = "title-container">
+  			<label id="concert_title" class = "title-label">Nombre evento</label>
+  		</div>
+  		<div class = "info-container">
+  			<label class = "event-info-label">Fecha:</label><label id="concert_date" class = "event-info-text">1/01/2017</label>
+  			<label class = "event-info-label">Lugar:</label><label id="concert_place" class = "event-info-text">Estadio Nacional</label> 
+  			<label class = "event-info-label">Dirección:</label><label id="concert_address" class = "event-info-text">Calle Jose Diaz S/n - Lima</label>
+  			<label class = "event-info-label">Hora inicio:</label><label id="concert_starts" class = "event-info-text">0:00am</label>
+  		</div>
+  		<!--<div class = "button-container legal-info">
+  			<a href="#" class="button-text">Ver información legal</a>
+  		</div> -->
+  		<div class = "map-container">
+  			<div class = "map-caption">Mapa del evento:</div>	
+  			<img id="concert_map" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
+  		</div>
+  	</div>
+	<div class="right-container">
+		<div class = "title-container">
+  			<label class = "title-label">Seleccione una entrada:</label>
+  		</div>
+  		<div class = "zone-select-container"> 
+  			<div class="select-style2"> 
+				<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+					<option value="0">CANCHA 1</option>
+					<option value="1">CANCHA 2</option>
+					<option value="2">CANCHA 3</option>
+				</select>
+  			</div>
+  			<div id="add_zone" class="small-action-button">+</div>
+  		</div>
+  		<div class="zones-container-title">Entradas seleccionadas:</div>
+  		<div class = "zones-container"> 
+  			<!--<div class="zone-container"> 
+  			<div class="zone-name">Zone name</div>
+  			<div class="small-action-button left">+</div><input class="zone-count" value ="1" readonly></input><div class="small-action-button right">-</div>
+  			<div class="small-action-button">x</div>
+  			</div>	-->	
+  		</div>
+  		<div class = "total-container">
+  			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
+  		</div>
+	</div> 	
+	<div class = "bottom-buttons-container">
+  	  	<div class= "button-container bottom-button absolute-left">
+  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  		</div>
+  		<div class= "button-container bottom-button absolute-right">
+  			<a id="buy_link" href="./comprar_entradas.html" class="button-text">Comprar</a>
+  		</div>
+  		</div>
+  	</div>	
+  </div>
+</body>
+<script> 
+var concert0 = {name: "Bruno Mars en concierto.", 
+				date: "30/11/2017",
+				place: "Estadio Nacional",
+				adress: "Dirección: Calle Jose Diaz S/n - Lima",
+				map: "images/concerts/map_bruno.jpg",
+				starts: "9:00 p.m.",
+				zones: [{name: "Cancha 1", cost: 790.00},{name: "Cancha 2", cost: 540.00},{name: "Cancha 3", cost: 400.00},
+						{name: "Oriente 1", cost: 650.00},{name: "Oriente 2", cost: 530.00},{name: "Oriente 3", cost: 450.00},
+						{name: "Occidente 1", cost: 747.00},{name: "Occidente 2", cost: 609.00},{name: "Occidente 3", cost: 450.00},
+						{name: "Tribuna Norte", cost: 170.00}]};
+var concert1 = {name: "Pinkin Lark en concierto.",
+				date: "11/06/2017",
+				place: "Estadio Nacional", 
+				adress: "Dirección: Calle Jose Diaz S/n - Lima",
+				map: "images/concerts/numb_map.jpg",
+				starts: "9:00 p.m.",
+				zones: [{name: "Campo A", cost: 480.00},{name: "Campo B", cost: 236.00},{name: "Oriente", cost: 132.00}]};
+$(function() {
+	var total = 0.00;
+	var currentEvent = getUrlParameter("evento");
+	$("#buy_link").attr("href","./comprar_entrada	.html?evento="+currentEvent);
+	var concert = concert0;
+	if (currentEvent != 0) {
+		concert = concert1;
+	}
+	$("#concert_title").text(concert.name);
+	$("#concert_date").text(concert.date);
+	$("#concert_place").text(concert.place);
+	$("#concert_adress").text(concert.adress);
+	$("#concert_starts").text(concert.starts);
+	$("#concert_map").attr("src",concert.map);
+	$("#concert_zones").html("");
+	$.each(concert.zones, function( index, zone ) {
+		var text = zone.name + " - S/. " +zone.cost.toFixed(2)
+		var opt = $("<option>").attr("id","zone_opt_"+index).val(index).text(text);
+		$("#concert_zones").append(opt);
+	});
+	
+	addHover($("#add_zone"));
+    
+    $('#add_zone').click(function() {
+		var selectedZoneId = $("#concert_zones").val();
+		$("#zone_opt_"+selectedZoneId).remove();
+		var zone = concert.zones[selectedZoneId];
+		var text = zone.name + " - S/. " + zone.cost.toFixed(2);
+		var container = $("<div>").addClass("zone-container");
+		var zonediv = $("<div>").addClass("zone-name").append(text);
+		var less = $("<div>").addClass("small-action-button left").append("-");
+		var count = $("<input>").addClass("zone-count").prop('readonly', true).val(1);
+		var more = $("<div>").addClass("small-action-button right").append("+");
+  		var del = $("<div>").addClass("small-action-button").append("x");
+		addHover(more);
+		addHover(less);
+		addHover(del);
+  		$(container).append(zonediv,less,count,more,del);
+  		$(".zones-container").append(container);
+  		$(del).click(function() {
+  			$(container).remove();
+  			var opt = $("<option>").attr("id","zone_opt_"+selectedZoneId).val(selectedZoneId).text(text);
+  			$("#concert_zones").append(opt);
+  			sortSelect();
+  			total-=zone.cost;	
+			$("#total_value").html("S/." + total.toFixed(2));
+  		});
+		$(more).click(function() {
+			var current = $(count).val();
+			current++;
+			$(count).val(current);
+			total+=zone.cost;	
+			$("#total_value").html("S/." + total.toFixed(2));
+		});
+		$(less).click(function() {
+			var current = $(count).val();
+			current--;
+			if (current == 0) {
+				$(del).click();
+			} else {
+				total-=zone.cost;	
+				$("#total_value").html("S/." + total.toFixed(2));
+			}
+			$(count).val(current);
+
+		});
+		total += zone.cost;
+		$("#total_value").html("S/." + total.toFixed(2));
+    });
+    
+});
+
+function addHover(elem) {
+	$(elem).hover(function() {
+        $(this).css('cursor','pointer');
+    });
+}
+
+function sortSelect() {
+	var my_options = $("#concert_zones option");
+	var selected = $("#concert_zones").val();
+	my_options.sort(function(a,b) {
+    	if (a.value > b.value) return 1;
+    	if (a.value < b.value) return -1;
+    	return 0
+	});
+	$("#concert_zones").empty().append( my_options );
+	$("#concert_zones").val(selected);	
+}
+
+</script>
+</html>
