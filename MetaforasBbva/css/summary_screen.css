@@ -1,0 +1,88 @@
+#content {
+    font-family: "bbvaweb-medium";
+    color: #026ead;
+    text-align: center;
+}
+
+.account-selector-container {
+	display: inline-block;
+    width: 60%;
+    padding: 10px;
+}
+
+.select-label{
+	display: inline-block;
+
+	height: 30px;
+}
+
+.sale-detail-container {
+    display: inline-block;
+    margin-bottom: 15px;	
+    border: 1px;
+    border-style: solid;
+    border-radius:5px;
+    padding: 15px;
+    width: 60%;
+    overflow-y: scroll;
+    max-height: 700px;
+}
+
+
+.select-style2 {
+ 	border:1px solid #777;
+    width: 300px;
+    border-radius: 3px;
+    background: white;
+	display: inline-block;
+}
+
+.select-style2 select {  
+	font-size:15px;
+	color:#777;
+    padding: 5px 8px 0px 5px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+	  
+}
+
+.select-style2 select:focus {
+    outline: none;  
+}	
+
+.select-style2 select option {
+	padding:3px;
+}
+
+.button-container.bottom-button.left-button {
+	float:left;
+}
+
+.button-container.bottom-button.right-button {
+	float:right;
+}
+
+.button-container.bottom-button.right-button.large {
+	width: 250px;
+}
+.info-left {
+	float: left;
+	width: 55%;
+	text-align: left;
+	margin-bottom: 15px;	
+	padding-left: 5	%;
+}
+
+.info-right {
+	float: right;
+	text-align: left;
+	width: 35%;
+}
+
+.info-line{
+	width: 100%;	
+}
