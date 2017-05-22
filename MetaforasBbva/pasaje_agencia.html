@@ -7,10 +7,13 @@
   <script src="./script/commons.js"></script>
   <title>Metaforas - BBVA </title>
   <meta name="description" content="Metaforas BBVA">
-  <meta name="author" content="GrupoHCI">
-
+  <meta name="author" content="GrupoHCI"> 
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/split_screen.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
 </head>
 
 <body>
@@ -58,12 +61,32 @@
   			</div>
   		</div>
   		<div class = "date-container"> 
-  			<div>Solo ida</div> <div>Ida y vuelta</div>
-  			<!--<div class="zone-container"> 
-  			<div class="zone-name">Zone name</div>
-  			<div class="small-action-button left">+</div><input class="zone-count" value ="1" readonly></input><div class="small-action-button right">-</div>
-  			<div class="small-action-button">x</div>
-  			</div>	-->	
+  			<div class = "date-header">
+  			<div class = "oneway-header">Solo ida</div><div class="twoway-header">Ida y vuelta</div>
+  			</div>
+  			<div class = "date-body">
+  			<div class = "out-date-container">
+  			<div class = "out-date-label">Fecha partida</div><div class = "out-date-picker"><input id="datepicker" /><img src="./images/calendar.png"></div>
+  			</div>
+  			<div class = "in-date-container">
+  			<div class= "in-date-label">Fecha retorno</div><div class = "out-date-picker"><input id="datepicker2" /><img src="./images/calendar.png"></div>
+  			</div>
+  			</div>
+  		</div>
+  		<div class = "schedule-container">
+  			<label class = "schedule-label">Horarios disponibles:</label>
+  			<div class = "time-select-container"> 
+  				<div class="select-style2"> 
+					<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+						<option value="0">10:00 a.m.</option>
+						<option value="1">11:00 a.m.</option>
+						<option value="2">12:00 a.m.</option>
+					</select>
+  				</div>
+  			</div>
+  			<div id="seat_selector" class= "button-container">
+  				<a href="#" class="button-text">Seleccionar Asientos</a>
+  			</div>
   		</div>
   		<div class = "total-container">
   			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
@@ -80,6 +103,11 @@
   	</div>	
   </div>
 </body>
+
+<div id="dialog" title="Seleccione un asiento">
+  <p>Interfaz con los asientos del bus.</p>
+</div>
+
 <script> 
 var agency0 = {name: "TRANSPORTES CRUZ DEL SUR S.A.C.", 
 				ruc: "20100227461",
@@ -100,13 +128,25 @@ $(function() {
 	if (currentEvent != 0) {
 		agency = agency1;
 	}
+	$(function() {
+    	$( "#dialog" ).dialog({autoOpen: false,
+        modal: true,
+        draggable: false,
+        width: "1000px"	
+        });
+  	});
 	$("#agency_name").text(agency.name);
 	$("#agency_ruc").text(agency.ruc);
 	$("#agency_adress").text(agency.adress);
 	$("#agency_contact").text(agency.contact);
 	$("#agency_pub").attr("src",agency.pub);
-    
+    $("#datepicker").datepicker();
+    $("#datepicker2").datepicker();
+    $("#seat_selector").click(function(){
+    	 $("#dialog").dialog( "open" );
+    });
 });
+
 
 function addHover(elem) {
 	$(elem).hover(function() {
