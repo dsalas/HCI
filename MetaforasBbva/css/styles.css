@@ -259,6 +259,45 @@ body {
 	font-size: 30px;
 }
 
+#depositos .alignright {
+	float: right;
+}
+
+#depositos .s10 .main-menu-option {
+	height: auto;
+}
+
+#depositos .s10 p {
+	font-size: 20px;
+	text-align: left;
+}
+
+#depositos .confirmacion {
+	text-align: center;
+	color: #026ead;
+	font-family: "bbvaweb-medium";
+}
+
+#depositos .cuenta {
+	margin-bottom: -30px;
+}
+
+#depositos .cuenta p {
+	padding: 0px 20px;
+}
+
+#depositos .cuenta a:focus {
+	/*background-color: #029af2;*/
+	background-color: #26aefd;
+}
+
+#depositos .sale-detail-container {
+	line-height: 0.5;
+	width: 600px;
+}
+
+/* Select */
+
 .select-dropdown{
   display: inherit !important;
   overflow-y: scroll;
