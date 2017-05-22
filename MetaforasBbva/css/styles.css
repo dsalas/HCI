@@ -177,3 +177,58 @@ body {
 }
 
 /* End Materialize CSS */
+
+#depositos .title-container {
+	padding-left: 5%;
+	margin-top: 2%
+}
+
+#depositos .bottom-buttons-container .button-text {
+	height: auto;
+}
+
+#depositos .bottom-buttons-container .main-menu-option {
+	height: auto;
+}
+
+#depositos .main-menu-option {
+	width: 800px;
+	height: 300px;
+}
+
+#depositos p {
+	width: auto;
+}
+
+#depositos .top-buttons-container p {
+	font-size: 35px;
+	line-height: initial;
+}
+
+#depositos h1 {
+	color: #026ead;
+	font-size: 40px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#depositos .title {
+	text-align: center;
+}
+
+#depositos .row:after {
+	content: none; /*avoid extra space*/
+}
+
+#depositos .s8 .button-image {
+	width: 250px;
+	height: 250px;
+}
+
+#depositos .btn {
+	right: 0px;
+}
+
+#depositos .card-content p {
+	font-size: 30px;
+}
