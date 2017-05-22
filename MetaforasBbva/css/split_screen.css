@@ -214,4 +214,75 @@
 
 .date-container{
 	margin-left: 20%;
+	margin-bottom: 15px;
+	width: 60%;
+	margin-top: 15px;
+}
+
+.date-header>div{
+	display: inline-block;
+	width: 49.7%;
+	color: white;
+	background-color: #026ead;
+	border-radius: 5px 5px 0px 0px;
+	color: white;
+	border-color: #D6DEE1;
+    border-style: solid;
+    border-width: 1px 0px 0px 1px;
+    text-align: center;
+}
+
+.out-date-picker>img,.in-date-picker>img {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
+.date-body {
+	padding: 15px;
+	border-style: solid;
+    border-width: 1px;
+}
+
+.out-date-container	 {
+	width: 100%;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+	
+.out-date-container>div, .in-date-container>div{
+	display: inline-block;
+}
+
+.out-date-label,.in-date-label{
+	width:50%;
+}
+
+.schedule-container{
+	margin-left: 20%;
+	margin-bottom: 15px;
+	width: 60%;
+}
+
+.schedule-container>.button-container {
+	width: 150px;
+	height: 10px;
+	display: inline-block;
+	border-radius: 5px;
+}
+.schedule-label{
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.time-select-container>.select-style2{
+	width: 100px;	
+	display: inline-block;
+}
+
+.schedule-container>.button-container>a {
+	font-size: 15px;
+	display:inline-blocK;
+	padding: 0px;
 }
