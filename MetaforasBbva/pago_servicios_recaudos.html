@@ -3,19 +3,25 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="./script/commons.js"></script>
-  <title>Metaforas - BBVA </title>
+
+  <title>Metaforas - BBVA - Depósitos</title>
   <meta name="description" content="Metaforas BBVA">
   <meta name="author" content="GrupoHCI">
 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
-  <div id="content">
+  <div id="pagos" class="container">
     <div class = "title-container">
   		<label class = "title-label">Servicios y Recaudos: seleccione una empresa.</label>
   	</div>
@@ -77,14 +83,19 @@
     	</div>
     </div>
 
-    <div class = "bottom-buttons-container row">
-      <div class= "button-container bottom-button btn">
-          <a href="javascript:history.back()" class="button-text">Volver</a>
+    <div class="bottom-buttons-container row">
+      <div class="col s3">
+        <a href="javascript:history.back()" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Volver</p>
+        </a>
       </div>
-      <div class= "button-container bottom-button btn" style="float: right;">
-          <a href="./resumen_pago_servicio.html" class="button-text">Confirmar</a>
+
+      <div class="col s3 offset-s6">
+        <a href="./resumen_pago_servicio.html" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Confirmar</p>
+        </a>
       </div>
-    </div>
+  	</div>
   </div>
 </body>
 </html>
