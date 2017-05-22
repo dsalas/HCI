@@ -9,6 +9,7 @@
   <meta name="description" content="Metaforas BBVA">
   <meta name="author" content="GrupoHCI">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
@@ -16,61 +17,74 @@
 <body>
   <div id="content">
     <div class = "title-container">
-  		<label class = "title-label">Servicios y Recaudos: seleccione una categoría.</label>
+  		<label class = "title-label">Servicios y Recaudos: seleccione una empresa.</label>
   	</div>
-  	<div class = "top-buttons-container">
-  		<div id="menu_option_0" class= "main-menu-option">
+  	<div class = "top-buttons-container row">
+      <div class = "col s6">
+          <select multiple class="select-dropdown" style="height: 330px; margin-top:30px">
+            <option class="option text" >Empresa 1</option>
+            <option class="option text">Empresa 2</option>
+            <option class="option text">Empresa 3</option>
+            <option class="option text">Empresa 4</option>
+            <option class="option text">Empresa 5</option>
+          </select>
+    	</div>
+      <div class = "col s6">
+        <table style="width: 100%;" class="details-table">
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="button-text">Ingrese Codigo Suministro</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class= "input-column" type="text" name="" value="AC-15525">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="button-text">Fecha de Emision</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="desc-label">18 Febrero, 2017</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="button-text">Fecha de Vencimiento</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="desc-label">20 Marzo, 2017</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="button-text"> Monto total a pagar S/.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="desc-label">139.37</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    	</div>
+    </div>
 
-  		</div>
-  		<div id="menu_option_1" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_2" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_3" class= "main-menu-option empty">
-  		</div>
-  	</div>
-  	<div class = "bottom-buttons-container">
-  		<div id="menu_option_4" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_5" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_6" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_7" class= "main-menu-option empty">
-  		</div>
-  	</div>
-  	<div class = "bottom-buttons-container">
-  	  	<div class= "button-container bottom-button">
-  			<a href="javascript:history.back()" class="button-text">Volver</a>
-  		</div>
-  		<div class = "search-tool-container">
-  		</div>
-  	</div>
+    <div class = "bottom-buttons-container row">
+      <div class= "button-container bottom-button btn">
+          <a href="javascript:history.back()" class="button-text">Volver</a>
+      </div>
+      <div class= "button-container bottom-button btn" style="float: right;">
+          <a href="#" class="button-text">Confirmar</a>
+      </div>
+    </div>
   </div>
 </body>
-
-<script>
-var concerts = [
-  {id: 0, name: "Servicios de Luz", img: "./images/placeholder.png", tipo: "servicio"},
-  {id: 1, name: "Servicios de Agua", img: "./images/placeholder.png", tipo: "servicio"},
-  {id: 2, name: "Servicios de Telefonía", img: "./images/placeholder.png", tipo: "servicio"},
-  {id: 3, name: "Recaudos Colegios", img: "./images/placeholder.png", tipo: "recaudo"},
-  {id: 4, name: "Recaudos Cosmeticos", img: "./images/placeholder.png", tipo: "recaudo"},
-  {id: 5, name: "Recaudos Municipalidades", img: "./images/placeholder.png", tipo: "recaudo"}
-];
-$(function() {
-    $.each(concerts, function( index, categoria ) {
-  		var containerid = "#menu_option_" + categoria.id;
-  		var eventRef = "./pago_servicios_recaudos.html" + "?categoria=" + categoria.id+"&tipo="+categoria.tipo;
-  		var image = $('<img>').attr( "src", categoria.img).attr("alt",categoria.img).attr("class","concert-image");
-  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(categoria.name);
-  		$(containerid).append(image);
-  		$(containerid).append(link);
-  		$(containerid).removeClass("empty");
-	});
-	//createSearchTool($(".search-tool-container"));
-});
-
-
-</script>
 </html>
