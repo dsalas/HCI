@@ -48,14 +48,13 @@
   </div>
 </body>
 <script> 
-var concerts = [{id: 0, name: "Bruno Mars", img: "./images/concerts/bruno.jpg"},{id: 1, name: "Pinkin Lark", img: "./images/concerts/intheend.png"}];
 $(function() {
-	var currentEvent = getUrlParameter("evento");
+	var currentEvent = getUrlParameter("agencia");
 	$("#buy_link").attr("href","./resumen_compra.html?evento="+currentEvent);
 	var currentEvent = getUrlParameter("evento");
 	if (currentEvent == 0) {
-		$("#event").html("Evento: Bruno Mars en concierto");
-		$("#date").html("Fecha: 30/11/2017");
+		$("#event").html("Pasaje: Origen: Lima - Lima  Destino: La Libertad - Trujillo");
+		$("#date").html("30/11/2017");
 		$("#info1").html("Una (1) entrada para la zona Cancha 1 - S/. 790.00");
 		$("#info2").html("Dos (2) entradas para la zona Cancha 2 - S/. 540.00");
 		$("#total").html("Total a pagar: S/. 1870.00");
