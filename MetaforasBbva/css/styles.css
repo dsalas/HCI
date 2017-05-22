@@ -108,8 +108,24 @@ body {
 	display: inline-block;
 }	
 
+.button-container.list-button {
+	height: 30px;
+	width: 100%;
+	border-radius: 15px;
+	display: inline-block;
+}
+
 .title-label {
 	font-size: 35px;
+	font-family: "bbvaweb-medium";
+	color: #026ead;
+	display: inline-block;
+	float: left;
+	padding: 10px 15px 10px 15px;
+}
+
+.desc-label {
+	font-size: 15px;
 	font-family: "bbvaweb-medium";
 	color: #026ead;
 	display: inline-block;
@@ -174,6 +190,16 @@ body {
 	height: 90px;
 	line-height: 25px;
 	text-transform: none;
+}
+
+#transferencias .bottom-buttons-container .button-text {
+	height: auto;
+}
+
+.details-table td {
+	padding: 0px 5px;
+	text-align: left;
+    vertical-align: middle;
 }
 
 /* End Materialize CSS */
