@@ -133,6 +133,15 @@ body {
 	padding: 10px 15px 10px 15px;
 }
 
+.subtitle-label {
+	font-size: 25px;
+	font-family: "bbvaweb-medium";
+	color: #026ead;
+	display: inline-block;
+	float: left;
+	padding: 10px 15px 10px 15px;
+}
+
 .title-image-container {
 	display: inline-block;
 	float: left;
@@ -329,5 +338,3 @@ body {
 	font-family: "bbvaweb-medium";
   display: table-cell;
 }
-
-
