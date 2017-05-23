@@ -41,7 +41,7 @@
   		</div>
   		<div class = "zone-select-container"> 
   			<div class="select-style2"> 
-				<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+				<select id="origin_locations"  size="1" autocomplete="off" id="selectbox">
 					<option value="0">Lima - Lima</option>
 					<option value="1">La Libertad - Trujillo</option>
 					<option value="2">Ica - Ica</option>
@@ -53,7 +53,7 @@
   		</div>
   		<div class = "zone-select-container"> 
   			<div class="select-style2"> 
-				<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+				<select id="destiny_locations"  size="1" autocomplete="off" id="selectbox">
 					<option value="0">Lima - Lima</option>
 					<option value="1">La Libertad - Trujillo</option>
 					<option value="2">Ica - Ica</option>
@@ -87,6 +87,7 @@
   			<div id="seat_selector" class= "button-container">
   				<a href="#" class="button-text">Seleccionar Asientos</a>
   			</div>
+  			<label id="selected_seats" class = "schedule-label">Asientos seleccionados:</label>		
   		</div>
   		<div class = "total-container">
   			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
@@ -105,7 +106,10 @@
 </body>
 
 <div id="dialog" title="Seleccione un asiento">
-  <p>Interfaz con los asientos del bus.</p>
+	<div class="bus-container">
+  		<table id="bus_table">
+  		</table>
+	</div>
 </div>
 
 <script> 
@@ -120,6 +124,8 @@ var agency1 = {name: "Movil Tours",
 				adress: "Terminal: Avenida Raul Ferrero 120",
 				pub: "images/travel/movil_pub.png"};
 				
+var locations = ["Lima - Lima","La Libertad - Trujillo","Ica - Ica"]
+
 $(function() {
 	var total = 0.00;
 	var currentEvent = getUrlParameter("agencia");
@@ -132,7 +138,7 @@ $(function() {
     	$( "#dialog" ).dialog({autoOpen: false,
         modal: true,
         draggable: false,
-        width: "1000px"	
+        width: "90%"	
         });
   	});
 	$("#agency_name").text(agency.name);
@@ -140,11 +146,16 @@ $(function() {
 	$("#agency_adress").text(agency.adress);
 	$("#agency_contact").text(agency.contact);
 	$("#agency_pub").attr("src",agency.pub);
-    $("#datepicker").datepicker();
+    $("#datepicker").datepicker({minDate: "today",
+    onSelect: function(dateText) {
+    	 $("#datepicker2").datepicker( "option", "minDate", dateText);
+  	} 
+  	});
     $("#datepicker2").datepicker();
     $("#seat_selector").click(function(){
     	 $("#dialog").dialog( "open" );
     });
+    createBus();
 });
 
 
@@ -154,6 +165,71 @@ function addHover(elem) {
     });
 }
 
+/*var bus = [[49,45,41,37,33,29,25,21,17,13,9,5,1],
+		   [50,46,42,38,34,30,26,22,18,14,10,6,2],
+		   [51,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0,-1],
+		   [52,47,43,39,35,31,27,23,19,15,11,7,3],
+		   [53,48,44,40,36,32,28,24,20,16,12,8,4]];*/
+		   
+var bus = [[49,-2,41,37,33,29,25,21,17,13,9,5,1],
+		   [50,-2,42,38,34,30,26,22,18,14,10,6,2],
+		   [-2,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0,-1],
+		   [-2,47,-2,39,35,31,-2,23,19,15,11,-2,3],
+		   [-2,48,44,40,36,32,-2,24,20,16,12,8,4]];
+var selectedSeats = [];
+var total = 0.00;
+
+function createBus(){
+	var bustable = $("#bus_table");
+	$.each(bus, function( index, row ) {
+		var tr = $("<tr>");
+		$.each(row, function( index, seat ) {
+			var td = $("<td>")
+			if (seat != 0) {
+				if (seat == -1) {
+					$(td).html("<-");
+				} else if (seat == -2) {
+					$(td).addClass("disabled");
+				} else {
+					$(td).html(seat);
+					$(td).addClass("bordered");
+					$(td).addClass("seat");
+				}
+			}
+			$(tr).append(td);
+		});
+		bustable.append(tr);
+	});
+	$(".seat").hover(function() {
+        $(this).css('cursor','pointer');
+    });
+    $(".seat").click(function() {
+        var num = $(this).html();
+        if ($(this).hasClass("selected")) {
+        	$(this).removeClass("selected");
+        	selectedSeats.splice($.inArray(num, selectedSeats),1);
+        	total-=30;
+        } else {
+        	$(this).addClass("selected");
+        	selectedSeats.push(num);
+        	total+=30;
+        }
+        updateSeats();
+        updateTotal();
+    });
+}
+
+function updateSeats(){
+	var seats = "Asientos seleccionados: " 
+	$.each(selectedSeats, function( index, seat ) {
+		seats+= seat + " "
+	});
+	$("#selected_seats").html(seats);
+}
+
+function updateTotal(){
+	$("#total_value").html("S/. " + total.toFixed(2));
+}
 
 </script>
 </html>
