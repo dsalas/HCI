@@ -196,7 +196,7 @@
 
 .bottom-buttons-container {
 	position: absolute;
-	bottom: 10%;
+	top: 80%;
 	width: 80%;
 	margin-left: 10%;
 }
@@ -285,4 +285,43 @@
 	font-size: 15px;
 	display:inline-blocK;
 	padding: 0px;
+}
+
+.bus-container {
+	width:100%;
+}
+
+#bus_table, #bus_table>tr>td.bordered {
+	margin: 0 auto;
+	border-style: solid;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#bus_table>tr>td.disabled {
+	background-image: url("../images/disabled.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#bus_table>tr>td {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 5px;	
+}
+
+#bus_table>tr>td.selected {
+	width: 20px;
+	height: 20px;
+	background-color: green;
+}
+
+#dialog{
+	background-color:#D6DEE1;
+	color: 
+}
+
+#selected_seats {
+	margin-top: 15px;
 }
