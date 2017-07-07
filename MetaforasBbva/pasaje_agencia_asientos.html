@@ -37,64 +37,32 @@
   	</div>
 	<div class="right-container">
 		<div class = "title-container">
-  			<label class = "title-label small">Seleccione ciudad de origen:</label>
+  			<label class = "title-label small">Ciudad de Partida: Departamento - Ciudad</label>
+  			<label class = "title-label small">Solo Ida</label>
   		</div>
-  		<div class = "zone-select-container"> 
-			<label class = "sector-label">Departamento:</label>
-  			<div class="select-style2"> 
-				<select id="origin_locations"  size="1" autocomplete="off" id="selectbox">
-					<option value="0">Departamento 1</option>
-					<option value="1">Departamento 2</option>
-					<option value="2">Departamento 3</option>
-				</select>
-  			</div>
+		<div class = "bus-class-container">
+			<label class = "bus-class-label">Seleccione una categoría:</label>
+			<div class = "bus-classes-container">
+			</div>
 		</div>
-  		<div class = "zone-select-container"> 
-			<label class = "sector-label">Ciudad:</label>
-  			<div class="select-style2"> 
-				<select id="origin_locations_city"  size="1" autocomplete="off" id="selectbox">
-					<option value="0">Ciudad 1</option>
-					<option value="1">Ciudad 2</option>
-					<option value="2">Ciudad 3</option>
-				</select>
+  		<div class = "schedule-container">
+  			<label class = "schedule-label">Horarios disponibles:</label>
+  			<div class = "time-select-container"> 
+  				<div class="select-style2"> 
+					<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+						<option value="0">10:00 a.m.</option>
+						<option value="1">11:00 a.m.</option>
+						<option value="2">12:00 a.m.</option>
+					</select>
+  				</div>
   			</div>
-
+  			<div id="seat_selector" class= "button-container">
+  				<a href="#" class="button-text">Seleccionar Asientos</a>
+  			</div>
+  			<label id="selected_seats" class = "schedule-label">Asientos seleccionados:</label>		
   		</div>
-  				<div class = "title-container">
-  			<label class = "title-label small">Seleccione ciudad destino:</label>
-  		</div>
-  		<div class = "zone-select-container"> 
-			<label class = "sector-label">Departamento:</label>
-  			<div class="select-style2"> 
-				<select id="destiny_locations"  size="1" autocomplete="off" id="selectbox">
-					<option value="0">Departamento 1</option>
-					<option value="1">Departamento 2</option>
-					<option value="2">Departamento 3</option>
-				</select>
-  			</div>
-		</div>
-		<div class = "zone-select-container"> 
-			<label class = "sector-label">Ciudad:</label>
-  			<div class="select-style2"> 
-				<select id="destiny_locations_city"  size="1" autocomplete="off" id="selectbox">
-					<option value="0">Ciudad 1</option>
-					<option value="1">Ciudad 2</option>
-					<option value="2">Ciudad 3</option>
-				</select>
-  			</div>
-  		</div>
-  		<div class = "date-container"> 
-  			<div class = "date-header">
-  			<div class = "oneway-header way-header">Solo ida</div><div class="twoway-header way-header">Ida y vuelta</div>
-  			</div>
-  			<div class = "date-body">
-  			<div class = "out-date-container">
-  			<div class = "out-date-label">Fecha partida</div><div class = "out-date-picker"><input id="datepicker" /><img src="./images/calendar.png"></div>
-  			</div>
-  			<div class = "in-date-container">
-  			<div class= "in-date-label">Fecha retorno</div><div class = "out-date-picker"><input id="datepicker2" /><img src="./images/calendar.png"></div>
-  			</div>
-  			</div>
+  		<div class = "total-container">
+  			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
   		</div>
 	</div> 	
 	<div class = "bottom-buttons-container">
@@ -102,7 +70,7 @@
   			<a href="javascript:history.back()" class="button-text">Volver</a>
   		</div>
   		<div class= "button-container bottom-button absolute-right">
-  			<a id="buy_link" href="./pasaje_agencia_asientos.html" class="button-text">Continuar</a>
+  			<a id="buy_link" href="./comprar_pasaje.html" class="button-text">Comprar</a>
   		</div>
   		</div>
   	</div>	
@@ -136,7 +104,7 @@ var agency1 = {name: "Movil Tours",
 $(function() {
 	var total = 0.00;
 	var currentEvent = getUrlParameter("agencia");
-	$("#buy_link").attr("href","./pasaje_agencia_asientos.html?agencia="+currentEvent);
+	$("#buy_link").attr("href","./comprar_pasaje.html?agencia="+currentEvent);
 	var agency = agency0;
 	if (currentEvent != 0) {
 		agency = agency1;
