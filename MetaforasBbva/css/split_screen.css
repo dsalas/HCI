@@ -325,3 +325,24 @@
 #selected_seats {
 	margin-top: 15px;
 }
+
+#bus_legend {	
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	margin-top: -11%;
+}
+
+#bus_legend>div {	
+	width: 100%;
+	display: inline-block;
+}
+
+#bus_legend>div>img {	
+	width: 15px;
+	display: inline-block;
+}
+
+#legend_selected{
+	color: green;
+}
