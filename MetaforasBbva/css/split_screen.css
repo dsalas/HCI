@@ -235,15 +235,15 @@
 }
 
 .date-container{
-	margin-left: 20%;
+	margin-left: 10%;
 	margin-bottom: 15px;
-	width: 60%;
+    width: 85%;
 	margin-top: 15px;
 }
 
 .date-header>div{
 	display: inline-block;
-	width: 49.7%;
+	width: 48.9%;
 	color: white;
 	background-color: #026ead;
 	border-radius: 5px 5px 0px 0px;
@@ -281,13 +281,13 @@
 }
 
 .schedule-container{
-	margin-left: 20%;
+	margin-left: 11%;
 	margin-bottom: 15px;
-	width: 60%;
+	width: 80%;
 }
 
 .bus-class-container {
-	margin-left: 20%;
+	margin-left: 11%;
 	margin-bottom: 15px;
 	width: 60%;
 }
@@ -335,6 +335,9 @@
 	background-color: grey;
 }
 
+#bus_table{
+	width: 600px;
+}
 #bus_table, #bus_table>tr>td.bordered {
 	margin: 0 auto;
 	border-style: solid;
@@ -373,8 +376,8 @@
 #bus_legend {	
 	display: inline-block;
 	float: right;
-	margin-right: 10px;
-	margin-top: -11%;
+	margin-right: -100px;
+	margin-top: -16%;
 }
 
 #bus_legend>div {	

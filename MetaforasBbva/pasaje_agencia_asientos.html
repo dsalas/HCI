@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/split_screen.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  
+  	<link rel="stylesheet" href="css/entradas.css">
 </head>
 
 <body>
@@ -36,14 +36,14 @@
   		</div>
   	</div>
 	<div class="right-container">
-		<div class = "title-container">
+		<div class = "split-title-container">
   			<label class = "title-label small">Ciudad de Partida: Departamento - Ciudad</label>
   			<label class = "title-label small">Solo Ida</label>
   		</div>
 		<div class = "bus-class-container">
 			<label class = "bus-class-label">Seleccione una categoría:</label>
 			<div class = "bus-classes-container">
-			<a href="#" class = "buss-class-option">Premium</a>
+			<a href="#" class = "selected buss-class-option">Premium</a>
 			<a href="#" class = "buss-class-option">Standar</a>
 			<a href="#" class = "buss-class-option">Economica</a>
 			</div>
@@ -59,7 +59,7 @@
 					</select>
   				</div>
   			</div>
-  			<div id="seat_selector" class= "button-container">
+  			<div id="seat_selector" class= "button-container btn">
   				<a href="#" class="button-text">Seleccionar Asientos</a>
   			</div>
   			<label id="selected_seats" class = "schedule-label">Asientos seleccionados:</label>		
@@ -69,18 +69,18 @@
   		</div>
 	</div> 	
 	<div class = "bottom-buttons-container">
-  	  	<div class= "button-container bottom-button absolute-left">
-  			<a href="javascript:history.back()" class="button-text">Volver</a>
-  		</div>
-  		<div class= "button-container bottom-button absolute-right">
-  			<a id="buy_link" href="./comprar_pasaje.html" class="button-text">Comprar</a>
-  		</div>
+		<div class="concert-bottom-button button-container bottom-button absolute-left waves-effect waves-light btn">
+			<a href="javascript:history.back()"><span class="concert-button-text">Volver</span></a>
+		</div>
+		<div class="concert-bottom-button button-container bottom-button absolute-right waves-effect waves-light btn">
+			<a id="buy_link" href="./comprar_pasaje.html"><span class="concert-button-text">Comprar</span></a>
+		</div>
   		</div>
   	</div>	
   </div>
 </body>
 
-<div id="dialog" title="Seleccione un asiento">
+<div id="dialog" title="Seleccione sus asientos">
 	<div class="bus-container">
   		<table id="bus_table">
   		</table>
@@ -211,6 +211,12 @@ function createBus(){
         }
         updateSeats();
         updateTotal();
+    });
+    $(".buss-class-option").click(function(){
+    	$(".buss-class-option").each(function(){
+    		$(this).removeClass("selected");	
+    	});
+    	$(this).addClass("selected");
     });
 }
 

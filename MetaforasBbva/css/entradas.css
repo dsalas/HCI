@@ -37,3 +37,17 @@
     border-width: 1px 0px 0px 1px;
     text-align: center;
 }
+
+.buss-class-option.selected {
+	background-color: #026ead;
+}
+
+.buss-class-option{
+background-color: grey;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 3px;
+	font-size: 14px;
+}
