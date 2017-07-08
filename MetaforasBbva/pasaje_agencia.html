@@ -20,7 +20,7 @@
 <body>
 	<div class="container" id="content">
 		<div class="left-container">
-			<div class="title-container">
+			<div class="split-title-container">
 				<label class="title-label" id="agency_name">Nombre evento</label>
 			</div>
 			<div class="info-container">
@@ -31,12 +31,12 @@
 			<div class="map-container"><img alt="Venta de entradas" class="map-image" id="agency_pub" src="images/concerts/map_bruno.jpg"></div>
 		</div>
 		<div class="right-container">
-			<div class="title-container">
+			<div class="split-title-container">
 				<label class="title-label small">Seleccione ciudad de origen:</label>
 			</div>
 			<div class="zone-select-container">
 				<label class="sector-label">Departamento:</label>
-				<div class="select-style2">
+				<div class="pasajes-select select-style2">
 					<select id="selectbox" size="1">
 						<option value="0">
 							Departamento 1
@@ -52,7 +52,7 @@
 			</div>
 			<div class="zone-select-container">
 				<label class="sector-label">Ciudad:</label>
-				<div class="select-style2">
+				<div class="pasajes-select select-style2">
 					<select id="selectbox" size="1">
 						<option value="0">
 							Ciudad 1
@@ -66,12 +66,12 @@
 					</select>
 				</div>
 			</div>
-			<div class="title-container">
+			<div class="split-title-container">
 				<label class="title-label small">Seleccione ciudad destino:</label>
 			</div>
 			<div class="zone-select-container">
 				<label class="sector-label">Departamento:</label>
-				<div class="select-style2">
+				<div class="pasajes-select select-style2">
 					<select id="selectbox" size="1">
 						<option value="0">
 							Departamento 1
@@ -87,7 +87,7 @@
 			</div>
 			<div class="zone-select-container">
 				<label class="sector-label">Ciudad:</label>
-				<div class="select-style2">
+				<div class="pasajes-select select-style2">
 					<select id="selectbox" size="1">
 						<option value="0">
 							Ciudad 1
@@ -127,11 +127,11 @@
 			</div>
 		</div>
 		<div class="bottom-buttons-container">
-			<div class="button-container bottom-button absolute-left">
-				<a class="button-text" href="javascript:history.back()">Volver</a>
+			<div class="concert-bottom-button button-container bottom-button absolute-left waves-effect waves-light btn">
+				<a href="javascript:history.back()"><span class="concert-button-text">Volver</span></a>
 			</div>
-			<div class="button-container bottom-button absolute-right">
-			<a id="buy_link" href="./comprar_pasaje.html" class="button-text">Comprar</a>
+			<div class="concert-bottom-button button-container bottom-button absolute-right waves-effect waves-light btn">
+			<a id="buy_link" href="./comprar_pasaje.html"><span class="concert-button-text">Comprar</span></a>
 			</div>
 		</div>
 	</div>
