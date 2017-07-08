@@ -3,44 +3,55 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="./script/commons.js"></script>
+
   <title>Metaforas - BBVA </title>
   <meta name="description" content="Metaforas BBVA">
   <meta name="author" content="GrupoHCI">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <script src="./script/commons.js"></script>
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
   <div id="content" class="container">
-    <div class = "title-container">
-  		<label class = "title-label">Seleccione un evento:</label>
+    <div class = "title-container row">
+  		<label class ="title-label">Seleccione un evento:</label>
   	</div>
-  	<div class = "top-buttons-container">
-  		<div id="menu_option_0" class= "main-menu-option">
+
+  	<div class = "top-buttons-container row">
+  		<div id="menu_option_0" class= "empty col s3">
+  		</div>
+  		<div id="menu_option_1" class= "empty col s3">
 
   		</div>
-  		<div id="menu_option_1" class= "main-menu-option empty">
+  		<div id="menu_option_2" class= "empty col s3">
+
   		</div>
-  		<div id="menu_option_2" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_3" class= "main-menu-option empty">
-  		</div>
-  	</div>
-  	<div class = "bottom-buttons-container">
-  		<div id="menu_option_4" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_5" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_6" class= "main-menu-option empty">
-  		</div>
-  		<div id="menu_option_7" class= "main-menu-option empty">
+  		<div id="menu_option_3" class= "empty col s3">
   		</div>
   	</div>
-  	<div class = "bottom-buttons-container">
-  	  	<div class= "button-container bottom-button">
+
+  	<div class = "bottom-buttons-container row">
+      <div id="menu_option_4" class="col s3">
+      </div>
+      <div id="menu_option_5" class="empty col s3">
+
+  		</div>
+      <div id="menu_option_6" class="empty col s3">
+
+  		</div>
+      <div id = "menu_option_7" class="empty col s3">
+  		</div>
+  	</div>
+  	<div class = "bottom-buttons-container row">
+  	  	<div class= "button-container list-bottom-button">
   			<a href="javascript:history.back()" class="button-text">Volver</a>
   		</div>
   		<div class = "search-tool-container">
@@ -48,6 +59,7 @@
   	</div>
   </div>
 </body>
+
 <script> 
 var concerts = [{id: 0, name: "Bruno Mars", img: "./images/concerts/bruno.jpg"},{id: 1, name: "Pinkin Lark", img: "./images/concerts/intheend.png"}];
 $(function() {
@@ -55,11 +67,19 @@ $(function() {
   		var containerid = "#menu_option_" + concert.id;
   		var eventRef = "./entrada_evento.html" + "?evento=" + concert.id;
   		var image = $('<img>').attr( "src", concert.img).attr("alt",concert.img).attr("class","concert-image");
-  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(concert.name);
-  		$(containerid).append(image);
+  		var link = $('<a>').attr("class","main-menu-option concert-menu-option waves-effect waves-light btn").attr("href",eventRef);
+  		var concertName = $('<p>').append(concert.name).attr("class","concert-button-text");
+  		$(link).append(image);
+  		$(link).append(concertName);
+  		console.log(containerid);
+  		console.log($(containerid));
   		$(containerid).append(link);
   		$(containerid).removeClass("empty");
 	});	
+	$(".empty").each(function() {
+		var link = $('<a>').attr("class","main-menu-option concert-menu-option btn");	
+		$(this).append(link);
+	});
 	createSearchTool($(".search-tool-container"));
 });
 </script>

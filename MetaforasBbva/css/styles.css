@@ -32,6 +32,10 @@ body {
 	padding: 10px 10px 10px 10px;
 }
 
+.bottom-buttons-container .empty {
+
+}
+
 .top-buttons-container, .bottom-buttons-container {
 	display: table;
 	/*border-spacing: 15px;*/
@@ -48,6 +52,10 @@ body {
     border-radius: 7.5px;
     padding: 10px;
     text-align: center;
+}
+
+.main-menu-option.concert-menu-option {
+	height: 135px;
 }
 
 .main-menu-option.empty {
@@ -87,6 +95,14 @@ body {
 	font-family: "bbvaweb-medium";
 }
 
+.concert-button-text {
+	color: white;
+	height: 20px;
+	text-decoration: none;
+	font-size: 10px;
+	display: inline-block;
+	font-family: "bbvaweb-medium";
+}
 
 .button-image {
 	width: 50px;
@@ -94,8 +110,14 @@ body {
 }
 
 .concert-image {
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 50px;
+}
+
+.button-container.list-bottom-button {
+	width: 150px;
+	display: inline-block;
+	border-radius: 15px;
 }
 
 .button-container.bottom-button {
@@ -196,6 +218,15 @@ body {
 	height: 90px;
 	line-height: 25px;
 	text-transform: none;
+}
+
+.empty>.main-menu-option{
+    width: 130px;
+    display: block;
+    height: 0px;
+    border-radius: 7.5px;
+    padding: 0px;
+    text-align: center;
 }
 
 #transferencias .bottom-buttons-container .button-text {
