@@ -209,15 +209,25 @@
 .bottom-buttons-container {
 	position: absolute;
 	top: 87%;
-	width: 80%;
-	margin-left: 10%;
+	width: 97%;
 }
+
 .button-container.bottom-button.absolute-right {
-	float: right;	
+	float: right;
+	width: 65px;
+	height: 25px;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;
 }
 
 .button-container.bottom-button.absolute-left {
 	float: left;
+	width: 65px;
+	border-radius: 5px;
+	height: 25px;
+	padding: 5px;
+	text-align: center;
 }
 
 .title-label.small {
