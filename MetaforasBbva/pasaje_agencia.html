@@ -17,90 +17,90 @@
 </head>
 
 <body>
-  <div id="content">
-	<div class="left-container">
-		<div class = "title-container">
-  			<label id="agency_name" class = "title-label">Nombre evento</label>
-  		</div>
-  		<div class = "info-container">
-  			<label class = "event-info-label">R.U.C.:</label><label id="agency_ruc" class = "event-info-text">1/01/2017</label>
-  			<label class = "event-info-label">Terminal:</label><label id="agency_adress" class = "event-info-text">Estadio Nacional</label> 
-  			<label class = "event-info-label">Contacto:</label><label id="agency_contact" class = "event-info-text">Calle Jose Diaz S/n - Lima</label>
-  		</div>
-  		<!--<div class = "button-container legal-info">
-  			<a href="#" class="button-text">Ver información legal</a>
-  		</div> -->
-  		<div class = "map-container">
-  			
-  			<img id="agency_pub" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
-  		</div>
-  	</div>
-	<div class="right-container">
-		<div class = "title-container">
-  			<label class = "title-label small">Seleccione ciudad de origen:</label>
-  		</div>
-  		<div class = "zone-select-container"> 
-  			<div class="select-style2"> 
-				<select id="origin_locations"  size="1" autocomplete="off" id="selectbox">
-					<option value="0">Lima - Lima</option>
-					<option value="1">La Libertad - Trujillo</option>
-					<option value="2">Ica - Ica</option>
-				</select>
-  			</div>
-  		</div>
-  				<div class = "title-container">
-  			<label class = "title-label small">Seleccione ciudad destino:</label>
-  		</div>
-  		<div class = "zone-select-container"> 
-  			<div class="select-style2"> 
-				<select id="destiny_locations"  size="1" autocomplete="off" id="selectbox">
-					<option value="0">Lima - Lima</option>
-					<option value="1">La Libertad - Trujillo</option>
-					<option value="2">Ica - Ica</option>
-				</select>
-  			</div>
-  		</div>
-  		<div class = "date-container"> 
-  			<div class = "date-header">
-  			<div class = "oneway-header">Solo ida</div><div class="twoway-header">Ida y vuelta</div>
-  			</div>
-  			<div class = "date-body">
-  			<div class = "out-date-container">
-  			<div class = "out-date-label">Fecha partida</div><div class = "out-date-picker"><input id="datepicker" /><img src="./images/calendar.png"></div>
-  			</div>
-  			<div class = "in-date-container">
-  			<div class= "in-date-label">Fecha retorno</div><div class = "out-date-picker"><input id="datepicker2" /><img src="./images/calendar.png"></div>
-  			</div>
-  			</div>
-  		</div>
-  		<div class = "schedule-container">
-  			<label class = "schedule-label">Horarios disponibles:</label>
-  			<div class = "time-select-container"> 
-  				<div class="select-style2"> 
-					<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
-						<option value="0">10:00 a.m.</option>
-						<option value="1">11:00 a.m.</option>
-						<option value="2">12:00 a.m.</option>
+  <div id="content" class="container">
+		<div class="left-container">
+			<div class = "title-container">
+					<label id="agency_name" class = "title-label">Nombre evento</label>
+				</div>
+				<div class = "info-container">
+					<label class = "event-info-label">R.U.C.:</label><label id="agency_ruc" class = "event-info-text">1/01/2017</label>
+					<label class = "event-info-label">Terminal:</label><label id="agency_adress" class = "event-info-text">Estadio Nacional</label> 
+					<label class = "event-info-label">Contacto:</label><label id="agency_contact" class = "event-info-text">Calle Jose Diaz S/n - Lima</label>
+				</div>
+				<!--<div class = "button-container legal-info">
+					<a href="#" class="button-text">Ver información legal</a>
+				</div> -->
+				<div class = "map-container">
+					
+					<img id="agency_pub" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
+				</div>
+			</div>
+		<div class="right-container">
+			<div class = "title-container">
+					<label class = "title-label small">Seleccione ciudad de origen:</label>
+				</div>
+				<div class = "zone-select-container"> 
+					<div class="select-style2"> 
+					<select id="origin_locations"  size="1" autocomplete="off" id="selectbox">
+						<option value="0">Lima - Lima</option>
+						<option value="1">La Libertad - Trujillo</option>
+						<option value="2">Ica - Ica</option>
 					</select>
-  				</div>
-  			</div>
-  			<div id="seat_selector" class= "button-container">
-  				<a href="#" class="button-text">Seleccionar Asientos</a>
-  			</div>
-  			<label id="selected_seats" class = "schedule-label">Asientos seleccionados:</label>		
-  		</div>
-  		<div class = "total-container">
-  			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
-  		</div>
-	</div> 	
-	<div class = "bottom-buttons-container">
-  	  	<div class= "button-container bottom-button absolute-left">
-  			<a href="javascript:history.back()" class="button-text">Volver</a>
-  		</div>
-  		<div class= "button-container bottom-button absolute-right">
-  			<a id="buy_link" href="./comprar_pasaje.html" class="button-text">Comprar</a>
-  		</div>
-  		</div>
+					</div>
+				</div>
+						<div class = "title-container">
+					<label class = "title-label small">Seleccione ciudad destino:</label>
+				</div>
+				<div class = "zone-select-container"> 
+					<div class="select-style2"> 
+					<select id="destiny_locations"  size="1" autocomplete="off" id="selectbox">
+						<option value="0">Lima - Lima</option>
+						<option value="1">La Libertad - Trujillo</option>
+						<option value="2">Ica - Ica</option>
+					</select>
+					</div>
+				</div>
+				<div class = "date-container"> 
+					<div class = "date-header">
+					<div class = "oneway-header">Solo ida</div><div class="twoway-header">Ida y vuelta</div>
+					</div>
+					<div class = "date-body">
+					<div class = "out-date-container">
+					<div class = "out-date-label">Fecha partida</div><div class = "out-date-picker"><input id="datepicker" /><img src="./images/calendar.png"></div>
+					</div>
+					<div class = "in-date-container">
+					<div class= "in-date-label">Fecha retorno</div><div class = "out-date-picker"><input id="datepicker2" /><img src="./images/calendar.png"></div>
+					</div>
+					</div>
+				</div>
+				<div class = "schedule-container">
+					<label class = "schedule-label">Horarios disponibles:</label>
+					<div class = "time-select-container"> 
+						<div class="select-style2"> 
+						<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+							<option value="0">10:00 a.m.</option>
+							<option value="1">11:00 a.m.</option>
+							<option value="2">12:00 a.m.</option>
+						</select>
+						</div>
+					</div>
+					<div id="seat_selector" class= "button-container">
+						<a href="#" class="button-text">Seleccionar Asientos</a>
+					</div>
+					<label id="selected_seats" class = "schedule-label">Asientos seleccionados:</label>		
+				</div>
+				<div class = "total-container">
+					<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
+				</div>
+		</div> 	
+		<div class = "bottom-buttons-container">
+					<div class= "button-container bottom-button absolute-left">
+					<a href="javascript:history.back()" class="button-text">Volver</a>
+				</div>
+				<div class= "button-container bottom-button absolute-right">
+					<a id="buy_link" href="./comprar_pasaje.html" class="button-text">Comprar</a>
+				</div>
+				</div>
   	</div>	
   </div>
 </body>
