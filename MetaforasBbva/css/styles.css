@@ -126,7 +126,7 @@ body {
 }
 
 .title-label {
-	font-size: 35px;
+	font-size: 20px;
 	font-family: "bbvaweb-medium";
 	color: #026ead;
 	display: inline-block;
@@ -174,7 +174,7 @@ body {
 /* Begin Materialize CSS */
 
 /*.btn {
-	right: 15px; 
+	right: 15px;
 }*/
 
 .btn:hover {
@@ -442,15 +442,15 @@ body {
 ::-webkit-scrollbar {
     width: 12px;
 }
- 
+
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
 
@@ -482,7 +482,7 @@ body {
    #depositos .input-field .prefix.active {
      color: #000;
    }
-        
+
 
 	.keypad-number {
 		height: auto !important;
