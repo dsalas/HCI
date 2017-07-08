@@ -17,6 +17,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="./script/commons.js"></script>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/entradas.css">
 
 </head>
 
@@ -37,7 +38,7 @@
   		</div>
   	</div>
 	
-  	<div class = "bottom-buttons-container row">
+  	<div class = "concert-bottom-buttons-container empty row">
   		<div id="menu_option_4" class= "col s3">
   		</div>
   		<div id="menu_option_5" class= "empty col s3">
@@ -47,9 +48,11 @@
   		<div id="menu_option_7" class= "empty col s3">
   		</div>
   	</div>
-  	<div class = "bottom-buttons-container row">
-  	  	<div class= "button-container bottom-button">
-  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  	<div class = "concert-nav-buttons-container row">
+  	  	<div class= "col s3">
+  			<a href="javascript:history.back()" class="waves-effect waves-light btn concert-back-button concert-blue">
+			<span class="concert-button-text">Volver</span>
+			</a>
   		</div>
   		<div class = "search-tool-container">
   		</div>
@@ -64,10 +67,9 @@ $(function() {
   		var eventRef = "./pasaje_agencia.html" + "?agencia=" + agency.id;
   		var image = $('<img>').attr( "src", agency.img).attr("alt",agency.img).attr("class","concert-image");
   		var link = $('<a>').attr("class","main-menu-option concert-menu-option waves-effect waves-light btn").attr("href",eventRef);
-<!--  		var link = $('<a>').attr("href",eventRef).attr("class","button-text").append(agency.name); -->
-		var concertName = $('<p>').append(agency.name).attr("class","concert-button-text");
+		var agencyName = $('<p>').append(agency.name).attr("class","concert-button-text");
 		$(link).append(image);
-  		$(link).append(concertName);
+  		$(link).append(agencyName);
 		console.log(containerid);
   		console.log($(containerid));
   		$(containerid).append(link);
