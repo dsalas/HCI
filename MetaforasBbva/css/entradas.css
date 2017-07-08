@@ -1,0 +1,39 @@
+.concert-bottom-buttons-container {
+	height: 154px;
+}
+
+.concert-nav-buttons-container {
+
+}
+
+.concert-blue {
+	background-color: #026ead;
+}
+
+.concert-back-button {
+	float: left;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.concert-button-text {
+	color: white;
+	height: 20px;
+	text-decoration: none;
+	font-size: 10px;
+	display: inline-block;
+	font-family: "bbvaweb-medium";
+}
+
+.letter-button {
+	display: inline-block;
+	width: 20px;
+	height: 30px;
+	padding: 7px 3px 3px 3px;
+	border-radius: 5px 0px 0px 0px;
+	color: white;
+	border-color: #D6DEE1;
+    border-style: solid;
+    border-width: 1px 0px 0px 1px;
+    text-align: center;
+}

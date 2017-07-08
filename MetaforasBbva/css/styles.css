@@ -32,8 +32,8 @@ body {
 	padding: 10px 10px 10px 10px;
 }
 
-.bottom-buttons-container .empty {
-
+.bottom-buttons-container.empty {
+	height: 100px;
 }
 
 .top-buttons-container, .bottom-buttons-container {
@@ -91,15 +91,6 @@ body {
 	padding: 15px 15px 15px 15px;
 	text-decoration: none;
 	font-size: 20px;
-	display: inline-block;
-	font-family: "bbvaweb-medium";
-}
-
-.concert-button-text {
-	color: white;
-	height: 20px;
-	text-decoration: none;
-	font-size: 10px;
 	display: inline-block;
 	font-family: "bbvaweb-medium";
 }
