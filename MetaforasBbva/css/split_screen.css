@@ -15,7 +15,7 @@
     /*background: #D6CDE1;*/
     width: 50%;
     float: left;
-    height: 600px;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -23,16 +23,18 @@
 .right-container {
     /*background: #D6CDE1;*/
     width: 50%;
-    height: 600px;
+    height: 100%;
     float: right;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.title-container {
-	max-width:80%;
+
+.split-title-container {
+	margin-left: 40px;
 }
 
-.title-container>.title-label {
+.split-title-container>.title-label {
+	font-size: 25px;
  	padding: 15px 0px 15px 0px;
 }
 
@@ -65,6 +67,17 @@
 	background-color: #026ead;
 }
 
+.add-ticket {
+	width: 104px;
+	padding: 5px;
+	height: 15px;
+	border-radius: 5px;
+	font-size: 10pt;
+	display: inline-block;
+	color: white;
+	background-color: #026ead;
+}
+
 .small-action-button.left {
 	width: 15px;
 	padding: 5px;
@@ -88,13 +101,13 @@
 
 .info-container {
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 11%;
     margin-bottom: 15px;
 }
 
 .map-container {
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 11%;
 }
 
 .event-info-label {
@@ -111,24 +124,23 @@
 
 .select-style2 {
  	border:1px solid #777;
-    width: 300px;
+    width: 200px;
     border-radius: 3px;
     overflow: hidden;
     background: white;
 	float:left;
-	margin-right: 15px; 
+	margin-right: 5px; 
 }
 
 .select-style2 select {  
 	font-size:15px;
 	color:#777;
     padding: 5px 8px 0px 5px;
-    width: 130%;
+    width: 100%;
     border: none;
     box-shadow: none;
     background: transparent;
     background-image: none;
-    -webkit-appearance: none;
 	  
 }
 
@@ -143,45 +155,44 @@
 
 .zone-select-container {
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 11%;
     margin-bottom: 15px;	
 }
 
 .zones-container-title {
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 11%;
     margin-bottom: 15px;
 }
 
 .zones-container{
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 11%;
     margin-bottom: 15px;	
     border: 1px;
     border-style: solid;
     border-radius:5px;
     padding: 15px;
-    min-width: 394px;
+    min-width: 286px;
 }
 
 .zone-count {
 	height: 19px;
 	vertical-align: top;
 	display: inline-block;
-	width: 50px;	
+	width: 30px;	
 	text-align: center;
 }
 
 .zone-container>.zone-name{
 	display: inline-block;
-	margin-right: 10px;
-	width: 250px;
+	width: 170px;
 	margin-bottom:10px;
 }
 
 .total-container{
     display: inline-block;
-    margin-left: 20%;
+    margin-left: 11%;
     width: 60%;
     margin-bottom: 15px;	
 }
@@ -196,16 +207,26 @@
 
 .bottom-buttons-container {
 	position: absolute;
-	top: 80%;
-	width: 80%;
-	margin-left: 10%;
+	top: 87%;
+	width: 97%;
 }
+
 .button-container.bottom-button.absolute-right {
-	float: right;	
+	float: right;
+	width: 65px;
+	height: 25px;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;
 }
 
 .button-container.bottom-button.absolute-left {
 	float: left;
+	width: 65px;
+	border-radius: 5px;
+	height: 25px;
+	padding: 5px;
+	text-align: center;
 }
 
 .title-label.small {
@@ -213,15 +234,15 @@
 }
 
 .date-container{
-	margin-left: 20%;
+	margin-left: 10%;
 	margin-bottom: 15px;
-	width: 60%;
+    width: 85%;
 	margin-top: 15px;
 }
 
 .date-header>div{
 	display: inline-block;
-	width: 49.7%;
+	width: 48.9%;
 	color: white;
 	background-color: #026ead;
 	border-radius: 5px 5px 0px 0px;
@@ -259,9 +280,21 @@
 }
 
 .schedule-container{
-	margin-left: 20%;
+	margin-left: 11%;
+	margin-bottom: 15px;
+	width: 80%;
+}
+
+.bus-class-container {
+	margin-left: 11%;
 	margin-bottom: 15px;
 	width: 60%;
+}
+
+.bus-class-label{
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 15px;
 }
 
 .schedule-container>.button-container {
@@ -270,6 +303,7 @@
 	display: inline-block;
 	border-radius: 5px;
 }
+
 .schedule-label{
 	display: inline-block;
 	width: 100%;
@@ -291,6 +325,18 @@
 	width:100%;
 }
 
+.sector-label{
+	float: left;
+	margin-right: 10px;
+}
+
+.way-header.no-way{
+	background-color: grey;
+}
+
+#bus_table{
+	width: 600px;
+}
 #bus_table, #bus_table>tr>td.bordered {
 	margin: 0 auto;
 	border-style: solid;
@@ -324,4 +370,25 @@
 
 #selected_seats {
 	margin-top: 15px;
+}
+
+#bus_legend {	
+	display: inline-block;
+	float: right;
+	margin-right: -100px;
+	margin-top: -16%;
+}
+
+#bus_legend>div {	
+	width: 100%;
+	display: inline-block;
+}
+
+#bus_legend>div>img {	
+	width: 15px;
+	display: inline-block;
+}
+
+#legend_selected{
+	color: green;
 }

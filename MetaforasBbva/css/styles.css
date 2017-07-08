@@ -17,9 +17,6 @@ body {
 	src: url("fonts/bbvaweb-medium.woff") format('woff');
 }
 
-.content {
-}
-
 .title-container {
 	font-size: 20px;
 	font-family: "bbvaweb-medium";
@@ -35,12 +32,16 @@ body {
 	padding: 10px 10px 10px 10px;
 }
 
+.bottom-buttons-container.empty {
+	height: 100px;
+}
+
 .top-buttons-container, .bottom-buttons-container {
 	display: table;
-	border-spacing: 15px;
-    border-collapse: separate;
-    margin: 0 auto;
-    width: 750px;
+	/*border-spacing: 15px;*/
+	border-collapse: separate;
+	margin: 0 auto;
+	/*width: 750px;*/
 }
 
 .main-menu-option {
@@ -51,6 +52,10 @@ body {
     border-radius: 7.5px;
     padding: 10px;
     text-align: center;
+}
+
+.main-menu-option.concert-menu-option {
+	height: 135px;
 }
 
 .main-menu-option.empty {
@@ -82,7 +87,7 @@ body {
 
 .button-text {
 	color: white;
-	height: 20px;
+	/*height: 20px;*/
 	padding: 15px 15px 15px 15px;
 	text-decoration: none;
 	font-size: 20px;
@@ -90,15 +95,20 @@ body {
 	font-family: "bbvaweb-medium";
 }
 
-
 .button-image {
 	width: 50px;
 	height: 50px;
 }
 
 .concert-image {
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 50px;
+}
+
+.button-container.list-bottom-button {
+	width: 150px;
+	display: inline-block;
+	border-radius: 15px;
 }
 
 .button-container.bottom-button {
@@ -116,7 +126,7 @@ body {
 }
 
 .title-label {
-	font-size: 35px;
+	font-size: 20px;
 	font-family: "bbvaweb-medium";
 	color: #026ead;
 	display: inline-block;
@@ -161,24 +171,11 @@ body {
     border-radius: 5px 0px 0px 0px;
 }
 
-.letter-button {
-	display: inline-block;
-	width: 10px;
-	height: 20px;
-	padding: 7px 3px 3px 3px;
-	border-radius: 5px 0px 0px 0px;
-	color: white;
-	border-color: #D6DEE1;
-    border-style: solid;
-    border-width: 1px 0px 0px 1px;
-    text-align: center;
-}
-
 /* Begin Materialize CSS */
 
-.btn {
-	right: 15px; /*  prevents offset */
-}
+/*.btn {
+	right: 15px;
+}*/
 
 .btn:hover {
 	background-color: #40b2da;
@@ -199,6 +196,15 @@ body {
 	height: 90px;
 	line-height: 25px;
 	text-transform: none;
+}
+
+.empty>.main-menu-option{
+    width: 130px;
+    display: block;
+    height: 0px;
+    border-radius: 7.5px;
+    padding: 0px;
+    text-align: center;
 }
 
 #transferencias .bottom-buttons-container .button-text {
@@ -226,7 +232,7 @@ body {
 	height: auto;
 }
 
-#depositos .main-menu-option {
+#depositos .s6 .main-menu-option {
 	width: 800px;
 	height: 300px;
 }
@@ -256,16 +262,22 @@ body {
 }
 
 #depositos .s8 .button-image {
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
+	margin: 5px;
 }
 
 #depositos .btn {
 	right: 0px;
 }
 
+#depositos .card-content {
+	margin-top: 35px;
+	width: 600px;
+}
+
 #depositos .card-content p {
-	font-size: 30px;
+	font-size: 20px;
 }
 
 #depositos .alignright {
@@ -274,6 +286,7 @@ body {
 
 #depositos .s10 .main-menu-option {
 	height: auto;
+	width: auto;
 }
 
 #depositos .s10 p {
@@ -338,3 +351,147 @@ body {
 	font-family: "bbvaweb-medium";
   display: table-cell;
 }
+
+/* Cambios Julio */
+
+body {
+	background-color: black;
+}
+
+.container {
+	background-color: #D6DEE1;
+	height: 500px;
+	width: 750px;
+	margin: 0 auto;
+	transform: translateY(12.5%)
+}
+
+.row {
+	margin: 0 auto !important;
+	border-spacing: 2px;
+}
+
+.col {
+	padding: 0 0.5rem !important;
+}
+
+#depositos .s6 .button-image {
+	width: 150px;
+	height: 150px;
+}
+
+#depositos h1 {
+	font-size: 1.8em;
+	margin-bottom: 15px;
+	/*vertical-align: middle;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);*/
+}
+
+/*#depositos .main-menu-option {
+	width: 300px;
+	height: 200px;
+}*/
+
+
+
+.bottom-buttons-container {
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+	left: 10px;
+}
+
+.index .bottom-buttons-container {
+	position: static;
+	bottom: auto;
+	margin-left: 17px !important;
+	margin-right: 17px !important;
+	width: auto !important;
+}
+
+.button-container.bottom-button {
+	height: auto;
+}
+
+.scroll-container {
+	width: 90%;
+	height: 270px;
+	margin: 0 auto;
+	overflow-y: scroll;
+}
+
+.scroll-container .row {
+	width: 90%;
+}
+
+.scroll-container .row .col {
+	width: 90%;
+}
+
+.scroll-container .row .col .btn {
+	width: 500px !important;
+}
+
+.scroll-container .row .col .btn p {
+	margin: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+
+
+ /* label color */
+   #depositos .input-field label {
+     color: #026ead;
+   }
+   /* label focus color */
+   #depositos .input-field input[type=text]:focus + label {
+     color: #26aefd;
+   }
+   /* label underline focus color */
+   #depositos .input-field input[type=text]:focus {
+     border-bottom: 1px solid #026ead;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   #depositos .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   #depositos .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   #depositos .input-field .prefix.active {
+     color: #000;
+   }
+
+
+	.keypad-number {
+		height: auto !important;
+		width: auto !important;
+		padding: 5px 10px;
+	}
+
+	.keypad-number .button-text {
+		height: auto !important;
+		width: auto !important;
+		padding: 0;
+	}

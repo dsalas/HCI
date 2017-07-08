@@ -1,0 +1,236 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="./script/commons.js"></script>
+  <title>Metaforas - BBVA </title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI"> 
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/split_screen.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="css/entradas.css">
+</head>
+
+<body>
+  <div id="content" class="container">
+	<div class="left-container" class="container">
+		<div class = "split-title-container">
+  			<label id="agency_name" class = "title-label">Nombre evento</label>
+  		</div>
+  		<div class = "info-container">
+  			<label class = "event-info-label">R.U.C.:</label><label id="agency_ruc" class = "event-info-text">1/01/2017</label>
+  			<label class = "event-info-label">Terminal:</label><label id="agency_adress" class = "event-info-text">Estadio Nacional</label> 
+  			<label class = "event-info-label">Contacto:</label><label id="agency_contact" class = "event-info-text">Calle Jose Diaz S/n - Lima</label>
+  		</div>
+  		<!--<div class = "button-container legal-info">
+  			<a href="#" class="button-text">Ver información legal</a>
+  		</div> -->
+  		<div class = "map-container">
+  			
+  			<img id="agency_pub" src="images/concerts/map_bruno.jpg" alt="Venta de entradas" class="map-image">
+  		</div>
+  	</div>
+	<div class="right-container">
+		<div class = "split-title-container">
+  			<label class = "title-label small">Ciudad de Partida: Departamento - Ciudad</label>
+  			<label class = "title-label small">Solo Ida</label>
+  		</div>
+		<div class = "bus-class-container">
+			<label class = "bus-class-label">Seleccione una categoría:</label>
+			<div class = "bus-classes-container">
+			<a href="#" class = "selected buss-class-option">Premium</a>
+			<a href="#" class = "buss-class-option">Standar</a>
+			<a href="#" class = "buss-class-option">Economica</a>
+			</div>
+		</div>
+  		<div class = "schedule-container">
+  			<label class = "schedule-label">Horarios disponibles:</label>
+  			<div class = "time-select-container"> 
+  				<div class="select-style2"> 
+					<select id="concert_zones"  size="1" autocomplete="off" id="selectbox">
+						<option value="0">10:00 a.m.</option>
+						<option value="1">11:00 a.m.</option>
+						<option value="2">12:00 a.m.</option>
+					</select>
+  				</div>
+  			</div>
+  			<div id="seat_selector" class= "button-container btn">
+  				<a href="#" class="button-text">Seleccionar Asientos</a>
+  			</div>
+  			<label id="selected_seats" class = "schedule-label">Asientos seleccionados:</label>		
+  		</div>
+  		<div class = "total-container">
+  			<label class = "total-label">Total</label><label id="total_value" class = "total-value">S/. 0.00</label>
+  		</div>
+	</div> 	
+	<div class = "bottom-buttons-container">
+		<div class="concert-bottom-button button-container bottom-button absolute-left waves-effect waves-light btn">
+			<a href="javascript:history.back()"><span class="concert-button-text">Volver</span></a>
+		</div>
+		<div class="concert-bottom-button button-container bottom-button absolute-right waves-effect waves-light btn">
+			<a id="buy_link" href="./comprar_pasaje.html"><span class="concert-button-text">Comprar</span></a>
+		</div>
+  		</div>
+  	</div>	
+  </div>
+</body>
+
+<div id="dialog" title="Seleccione sus asientos">
+	<div class="bus-container">
+  		<table id="bus_table">
+  		</table>
+		<div id="bus_legend">
+			<div><img src="images/disabled.png"></img> Ocupado</div>
+			<div id="legend_selected">Seleccionado</div>
+		</div>
+	</div>
+</div>
+
+<script> 
+var agency0 = {name: "TRANSPORTES CRUZ DEL SUR S.A.C.", 
+				ruc: "20100227461",
+				contact: "3115030",
+				adress: "Terminal: Calle Jose Diaz S/n - Lima",
+				pub: "images/travel/cruz_pub.jpg"};
+var agency1 = {name: "Movil Tours",
+				ruc: "11/06/2017",
+				contact: "Estadio Nacional", 
+				adress: "Terminal: Avenida Raul Ferrero 120",
+				pub: "images/travel/movil_pub.png"};
+				
+
+$(function() {
+	var total = 0.00;
+	var currentEvent = getUrlParameter("agencia");
+	$("#buy_link").attr("href","./comprar_pasaje.html?agencia="+currentEvent);
+	var agency = agency0;
+	if (currentEvent != 0) {
+		agency = agency1;
+	}
+	$(function() {
+	    	$( "#dialog" ).dialog({autoOpen: false,
+        		modal: true,
+        		draggable: false,
+        		width: "90%"	
+        	});
+  	});
+	$("#agency_name").text(agency.name);
+	$("#agency_ruc").text(agency.ruc);
+	$("#agency_adress").text(agency.adress);
+	$("#agency_contact").text(agency.contact);
+	$("#agency_pub").attr("src",agency.pub);
+
+    	$("#datepicker").datepicker({minDate: "today",
+    		onSelect: function(dateText) {
+	    		$("#datepicker2").datepicker( "option", "minDate", dateText);
+  		} 
+  	});
+    	$("#datepicker2").datepicker();
+    	$("#seat_selector").click(function(){
+    	 	$("#dialog").dialog( "open" );
+    	});
+	showOneWay();
+    	createBus();
+	addHover($(".oneway-header"));
+	$(".oneway-header").click(function(){ showOneWay() });
+	addHover($(".twoway-header"));
+	$(".twoway-header").click(function(){ showTwoWay() });
+});
+
+function showOneWay() {
+	$(".in-date-container").hide();
+	$(".oneway-header").removeClass("no-way")
+	$(".twoway-header").addClass("no-way")
+}
+
+function showTwoWay() {
+	$(".in-date-container").show();
+	$(".oneway-header").addClass("no-way")
+	$(".twoway-header").removeClass("no-way")
+}
+
+function addHover(elem) {
+	$(elem).hover(function() {
+        $(this).css('cursor','pointer');
+    });
+}
+
+/*var bus = [[49,45,41,37,33,29,25,21,17,13,9,5,1],
+		   [50,46,42,38,34,30,26,22,18,14,10,6,2],
+		   [51,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0,-1],
+		   [52,47,43,39,35,31,27,23,19,15,11,7,3],
+		   [53,48,44,40,36,32,28,24,20,16,12,8,4]];*/
+		   
+var bus = [[49,-2,41,37,33,29,25,21,17,13,9,5,1],
+		   [50,-2,42,38,34,30,26,22,18,14,10,6,2],
+		   [-2,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0,-1],
+		   [-2,47,-2,39,35,31,-2,23,19,15,11,-2,3],
+		   [-2,48,44,40,36,32,-2,24,20,16,12,8,4]];
+var selectedSeats = [];
+var total = 0.00;
+
+function createBus(){
+	var bustable = $("#bus_table");
+	$.each(bus, function( index, row ) {
+		var tr = $("<tr>");
+		$.each(row, function( index, seat ) {
+			var td = $("<td>")
+			if (seat != 0) {
+				if (seat == -1) {
+					$(td).html("<-");
+				} else if (seat == -2) {
+					$(td).addClass("disabled");
+				} else {
+					$(td).html(seat);
+					$(td).addClass("bordered");
+					$(td).addClass("seat");
+				}
+			}
+			$(tr).append(td);
+		});
+		bustable.append(tr);
+	});
+	$(".seat").hover(function() {
+        $(this).css('cursor','pointer');
+    });
+    $(".seat").click(function() {
+        var num = $(this).html();
+        if ($(this).hasClass("selected")) {
+        	$(this).removeClass("selected");
+        	selectedSeats.splice($.inArray(num, selectedSeats),1);
+        	total-=30;
+        } else {
+        	$(this).addClass("selected");
+        	selectedSeats.push(num);
+        	total+=30;
+        }
+        updateSeats();
+        updateTotal();
+    });
+    $(".buss-class-option").click(function(){
+    	$(".buss-class-option").each(function(){
+    		$(this).removeClass("selected");	
+    	});
+    	$(this).addClass("selected");
+    });
+}
+
+function updateSeats(){
+	var seats = "Asientos seleccionados: " 
+	$.each(selectedSeats, function( index, seat ) {
+		seats+= seat + " "
+	});
+	$("#selected_seats").html(seats);
+}
+
+function updateTotal(){
+	$("#total_value").html("S/. " + total.toFixed(2));
+}
+
+</script>
+</html>

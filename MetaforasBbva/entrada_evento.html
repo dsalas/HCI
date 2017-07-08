@@ -10,13 +10,14 @@
   <meta name="author" content="GrupoHCI">
 
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/split_screen.css">
+  <link rel="stylesheet" href="css/split_screen.css">  
+  <link rel="stylesheet" href="css/entradas.css">
 </head>
 
 <body>
-  <div id="content">
-	<div class="left-container">
-		<div class = "title-container">
+  <div id="content" class="container">
+	<div class="left-container" class="container">
+		<div class = "split-title-container">
   			<label id="concert_title" class = "title-label">Nombre evento</label>
   		</div>
   		<div class = "info-container">
@@ -34,7 +35,7 @@
   		</div>
   	</div>
 	<div class="right-container">
-		<div class = "title-container">
+		<div class = "split-title-container">
   			<label class = "title-label">Seleccione una entrada:</label>
   		</div>
   		<div class = "zone-select-container"> 
@@ -45,7 +46,7 @@
 					<option value="2">CANCHA 3</option>
 				</select>
   			</div>
-  			<div id="add_zone" class="small-action-button">+</div>
+  			<div id="add_zone" class="add-ticket">Agregar entrada</div>
   		</div>
   		<div class="zones-container-title">Entradas seleccionadas:</div>
   		<div class = "zones-container"> 
@@ -60,11 +61,15 @@
   		</div>
 	</div> 	
 	<div class = "bottom-buttons-container">
-  	  	<div class= "button-container bottom-button absolute-left">
-  			<a href="javascript:history.back()" class="button-text">Volver</a>
+  	  	<div class= "concert-bottom-button button-container bottom-button absolute-left waves-effect waves-light btn">
+   			<a href="javascript:history.back()" class="">
+  			<span class="concert-button-text">Volver</span>
+  			</a>
   		</div>
-  		<div class= "button-container bottom-button absolute-right">
-  			<a id="buy_link" href="./comprar_entradas.html" class="button-text">Comprar</a>
+  		<div class= "concert-bottom-button button-container bottom-button absolute-right waves-effect waves-light btn">
+  			<a id="buy_link" href="./comprar_entradas.html" class="">
+  			<span class="concert-button-text">Confirmar</span>
+  			</a>
   		</div>
   		</div>
   	</div>	

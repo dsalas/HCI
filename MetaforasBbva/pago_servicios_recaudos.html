@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Metaforas - BBVA - Depósitos</title>
+  <title>Metaforas - BBVA - Depï¿½sitos</title>
   <meta name="description" content="Metaforas BBVA">
   <meta name="author" content="GrupoHCI">
 
@@ -15,11 +15,28 @@
 
    <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-
+  <link href="css/split_screen.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
+<style>
+input[type=xxx] {
+    width: 290px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('./images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+</style>
 <body>
   <div id="pagos" class="container">
     <div class = "title-container">
@@ -27,7 +44,10 @@
   	</div>
   	<div class = "top-buttons-container row">
       <div class = "col s6">
-          <select multiple class="select-dropdown" style="height: 330px; margin-top:30px">
+        <form>
+          <input type="xxx" name="search" placeholder="Search..">
+        </form>
+          <select multiple class="select-dropdown" style="height: 250px; margin-top:30px">
             <option class="option text" >Empresa 1</option>
             <option class="option text">Empresa 2</option>
             <option class="option text">Empresa 3</option>
@@ -38,7 +58,7 @@
       <div class = "col s6">
         <table style="width: 100%;" class="details-table">
             <tbody>
-                <tr>
+                <tr style="line-height: 0.5;">
                     <td>
                         <label class="button-text">Ingrese Codigo Suministro</label>
                     </td>
@@ -91,8 +111,8 @@
       </div>
 
       <div class="col s3 offset-s6">
-        <a href="./resumen_pago_servicio.html" class="main-menu-option waves-effect waves-light btn bottom-button">
-          <p class="button-text">Confirmar</p>
+        <a href="./ingresar-dinero-servicios.html" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Siguiente</p>
         </a>
       </div>
   	</div>

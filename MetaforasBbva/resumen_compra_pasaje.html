@@ -8,14 +8,18 @@
   <title>Metaforas - BBVA </title>
   <meta name="description" content="Metaforas BBVA">
   <meta name="author" content="GrupoHCI">
-
+  <!-- Compiled and minified CSS 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">-->
+   <!-- Compiled and minified JavaScript 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>-->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/summary_screen.css">
+  <link rel="stylesheet" href="css/summary_screen.css">  
+  <link rel="stylesheet" href="css/entradas.css">
 
 </head>
 
 <body>
-  <div id="content">
+  <div id="content" class="container">
     <div class = "title-container">
   		<label class = "title-label">Detalle de la compra:</label>
   	</div>
@@ -23,19 +27,31 @@
   		<div class = "info-left info-line">Operación: ID-3456-COMPPAS-1993892</div>
   		<div id="place" class = "info-left info-line">Lugar</div>
   		<div id="date" class = "info-left info-line">Fecha</div>
+  		<div id="account" class = "info-left info-line">Cuenta</div>
 		<div id="time" class = "info-left info-line"></div>
 		<div id="info1" class = "info-left info-line"></div>
 		<div id="total" class = "info-left info-line">Total a pagar:</div>
 	</div>
-  	<div class = "bottom-buttons-container">
+	<div class = "concert-bottom-buttons-container">
+  	  	<div class= "concert-bottom-button button-container bottom-button left-button waves-effect waves-light btn">
+  			<a href="#" class="">
+  			<span class="concert-button-text">Ver Saldo</span>
+  			</a>
+  		</div>
+  		 <div class= "concert-bottom-button button-container bottom-button right-button btn">
+  			<a href="./bienvenida.html" class="">
+  			<span class="concert-button-text">Imprimir Comprobante</span></a>
+  			</a>
+  		</div>
+  	</div>
+  	<!--<div class = "bottom-buttons-container">
   	  	<div class= "button-container bottom-button left-button">
   			<a href="#" class="button-text">Ver Saldo</a>
   		</div>
   		 <div class= "button-container bottom-button right-button large">
-  			<a id="buy_link" href="#" class="button-text ">Imprimir comprobante</a>
+  			<a id="buy_link" href="./bienvenida.html" class="button-text ">Imprimir comprobante</a>
   		</div>
-  		</div>
-  	</div>
+  	</div>-->
   </div>
 </body>
 <script> 
@@ -45,12 +61,14 @@ $(function() {
 		$("#place").html("Pasaje: Origen: Lima - Lima  Destino: La Libertad - Trujillo");
 		$("#date").html("Fecha de partida 29/05/2017  - Fecha de retorno: 5/06/2017");
 		$("#time").html("Hora de partida: 11:00 a.m.");
+		$("#account").html("Cuenta: 5343-4673-1292-1283 - 500 S/.");
 		$("#info1").html("Asientos: 40, 41");
 		$("#total").html("Total a pagar: S/. 150.00");
 	} else {
 		$("#place").html("Pasaje: Origen: Lima - Lima Destino: La Libertad - Trujillo");
 		$("#date").html("Fecha de partida 29/05/2017  - Fecha de retorno: 5/06/2017");
 		$("#time").html("Hora de partida: 11:00 a.m.");
+		$("#account").html("Cuenta: 5343-4673-1292-1283 - 500 S/.");
 		$("#info1").html("Asientos: 40, 41");
 		$("#total").html("Total a pagar: S/. 150.00");
 	}

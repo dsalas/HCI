@@ -1,0 +1,179 @@
+<!doctype html>
+
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <title>Metaforas - BBVA - Depósitos</title>
+  <meta name="description" content="Metaforas BBVA">
+  <meta name="author" content="GrupoHCI">
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    $(document).ready(function() {
+        $('select').material_select();
+      });
+  </script>
+
+</head>
+
+<body>
+  <div id="depositos" class="container">
+
+    <div class="title-container row">
+    	<div class="title-image-container">
+    	 <img src="images/testIcon.png" alt="Test Icon" class="title-image">
+    	</div>
+  		<label class="title-label">Depósitos</label>
+  	</div>
+
+    <div class="top-buttons-container row title">
+      <div class="col s12">
+        <h1 class="button-text" > 
+          <span style="margin-right: 50px">Ingrese el número de cuenta:</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="top-buttons-container row cuenta">
+      <div class="input-field col s12" style="width: 500px !important">
+        <input placeholder="Número de cuenta" id="first_name" type="text" class="validate" style="font-size: 2rem; text-align: center">
+        <label for="first_name" style="font-size: 1rem;">Número de cuenta</label>
+        <!--<p class="alignleft"><strong>Cuenta ahorro:</strong><span class="alignright">xxxx xxxx xxxx 1234</span></p>-->
+      </div>
+    </div>
+
+    <div class="keypad">
+      <div class="row">
+        <div class="col s2 offset-s4">
+
+          <div class="row">
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">7</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">8</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">9</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">4</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">5</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">6</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">1</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">2</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">3</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">&lt;</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">0</p>
+              </a>
+            </div>
+            <div class="col s4">
+              <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number">
+                <p class="button-text">&gt;</p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col s2">
+
+          <div class="row" style="width:90px;">
+            <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number" style="width: 130px !important;">
+              <p class="button-text">←</p>
+            </a>
+          </div>
+          <div class="row" style="width:90px;">
+            <a href="#" class="main-menu-option waves-effect waves-light btn keypad-number" style="width: 130px !important;">
+              <p class="button-text">CLEAR</p>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-buttons-container row">
+      <div class="col s3">
+        <a href="javascript:history.back()" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Volver</p>
+        </a>
+      </div>
+
+      <div class="col s3 offset-s6">
+        <a href="depositos-cheques-confirmacion.html" class="main-menu-option waves-effect waves-light btn bottom-button">
+          <p class="button-text">Confirmar</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+<script>
+  $('.keypad-number').click(function(e){
+    var car = e.target.innerText;
+    if (car == 'CLEAR') {
+      $('#first_name').val('');
+    }
+    else if (car == '←') {
+      $('#first_name').val($('#first_name').val().slice(0, -1));
+    }
+    else if (car >= '0' && car <= '9') {
+      $('#first_name').val($('#first_name').val() + car);
+    }
+  });
+</script>
+</html>
