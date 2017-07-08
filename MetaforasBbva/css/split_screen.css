@@ -65,6 +65,17 @@
 	background-color: #026ead;
 }
 
+.add-ticket {
+	width: 120px;
+	padding: 5px;
+	height: 15px;
+	border-radius: 5px;
+	font-size: 11pt;
+	display: inline-block;
+	color: white;
+	background-color: #026ead;
+}
+
 .small-action-button.left {
 	width: 15px;
 	padding: 5px;
@@ -264,12 +275,25 @@
 	width: 60%;
 }
 
+.bus-class-container {
+	margin-left: 20%;
+	margin-bottom: 15px;
+	width: 60%;
+}
+
+.bus-class-label{
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
 .schedule-container>.button-container {
 	width: 150px;
 	height: 10px;
 	display: inline-block;
 	border-radius: 5px;
 }
+
 .schedule-label{
 	display: inline-block;
 	width: 100%;
@@ -289,6 +313,15 @@
 
 .bus-container {
 	width:100%;
+}
+
+.sector-label{
+	float: left;
+	margin-right: 10px;
+}
+
+.way-header.no-way{
+	background-color: grey;
 }
 
 #bus_table, #bus_table>tr>td.bordered {
@@ -324,4 +357,25 @@
 
 #selected_seats {
 	margin-top: 15px;
+}
+
+#bus_legend {	
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	margin-top: -11%;
+}
+
+#bus_legend>div {	
+	width: 100%;
+	display: inline-block;
+}
+
+#bus_legend>div>img {	
+	width: 15px;
+	display: inline-block;
+}
+
+#legend_selected{
+	color: green;
 }
