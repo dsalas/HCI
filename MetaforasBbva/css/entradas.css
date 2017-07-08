@@ -51,3 +51,7 @@ background-color: grey;
 	border-radius: 3px;
 	font-size: 14px;
 }
+
+.pasajes-select.select-style2 {
+	width: 150px;
+}
