@@ -87,7 +87,7 @@ body {
 
 .button-text {
 	color: white;
-	height: 20px;
+	/*height: 20px;*/
 	padding: 15px 15px 15px 15px;
 	text-decoration: none;
 	font-size: 20px;
@@ -284,8 +284,8 @@ body {
 }
 
 #depositos .s8 .button-image {
-	width: 250px;
-	height: 250px;
+	width: 150px;
+	height: 150px;
 }
 
 #depositos .btn {
@@ -388,4 +388,35 @@ body {
 
 .col {
 	padding: 0 0.5rem !important;
+}
+
+#depositos .button-image {
+	width: 150px;
+	height: 150px;
+}
+
+#depositos h1 {
+	font-size: 2em;
+}
+
+#depositos .main-menu-option {
+	width: 600px;
+	height: 200px;
+}
+
+
+
+.bottom-buttons-container {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+.index .bottom-buttons-container {
+	position: static;
+	bottom: auto;
+}
+
+.button-container.bottom-button {
+	height: auto;
 }
